@@ -1,6 +1,6 @@
-/Binaries/
-/Diagnosis/
-/Temp/
+Binaries/
+Diagnosis/
+Temp/
 /*.set
 /*.isopen
 *.zip
