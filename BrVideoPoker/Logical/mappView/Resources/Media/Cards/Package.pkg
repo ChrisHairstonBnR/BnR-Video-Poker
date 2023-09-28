@@ -54,5 +54,6 @@
     <Object Type="File">Minicard_QD.svg</Object>
     <Object Type="File">Minicard_QH.svg</Object>
     <Object Type="File">Minicard_QS.svg</Object>
+    <Object Type="File">Minicard_Back.svg</Object>
   </Objects>
 </Package>
