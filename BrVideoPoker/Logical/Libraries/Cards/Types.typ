@@ -1,0 +1,37 @@
+
+TYPE
+	Faces_enum : 
+		(
+		CARD_TWO,
+		CARD_THREE,
+		CARD_FOUR,
+		CARD_FIVE,
+		CARD_SIX,
+		CARD_SEVEN,
+		CARD_EIGHT,
+		CARD_NINE,
+		CARD_TEN,
+		CARD_JACK,
+		CARD_QUEEN,
+		CARD_KING,
+		CARD_ACE
+		);
+	Suits_enum : 
+		(
+		SUIT_HEARTS,
+		SUIT_CLUBS,
+		SUIT_DIAMONDS,
+		SUIT_SPADES
+		);
+	Card_typ : 	STRUCT 
+		Face : Faces_enum;
+		Suit : Suits_enum;
+	END_STRUCT;
+	DeckState : 
+		(
+		DECKSTATE_INIT,
+		DECKSTATE_IDLE,
+		DECKSTATE_SHUFFLE,
+		DECKSTATE_ERROR
+		);
+END_TYPE

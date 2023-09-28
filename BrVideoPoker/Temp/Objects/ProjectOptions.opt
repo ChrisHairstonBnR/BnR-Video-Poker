@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.11.5.46 SP"?>
+<ProjectOptions
+  IecNamingConventions="true"
+  IecKeywordsAsStructureMembers="false"
+  IecExtendedConstants="true"
+  LogicalDirectory="C:\Projects\BnR-Video-Poker\BrVideoPoker\Logical\"
+  TempDirectory="C:\Projects\BnR-Video-Poker\BrVideoPoker\Temp\"
+  AutomationStudioVersion="4.11.5.46 SP"
+  AutomationStudioEdition="Standard"
+  BuildCrossReference="false"
+  ActiveConfiguration="Sim"
+  CreateAnsiCDeclarations="false" />

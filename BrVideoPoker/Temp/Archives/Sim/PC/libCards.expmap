@@ -1,0 +1,7 @@
+{
+  global:
+    SwapCard;
+    CardFB;
+  local:
+    *;
+ };

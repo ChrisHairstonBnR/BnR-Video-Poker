@@ -1,0 +1,3 @@
+VAR CONSTANT
+	RAND_MAX : UINT := 32797; (*Maximum possible value for random number.*)
+END_VAR

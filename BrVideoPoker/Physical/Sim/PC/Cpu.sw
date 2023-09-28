@@ -5,4 +5,12 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4" />
+  <Libraries>
+    <LibraryObject Name="PseudoRNG" Source="Libraries.PseudoRNG.lby" Memory="UserROM" Language="IEC" Debugging="true" />
+    <LibraryObject Name="AsIecCon" Source="Libraries.AsIecCon.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="astime" Source="Libraries.astime.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="AsIoTime" Source="Libraries.AsIoTime.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="Cards" Source="Libraries.Cards.lby" Memory="UserROM" Language="IEC" Debugging="true" />
+  </Libraries>
 </SwConfiguration>
