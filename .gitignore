@@ -1,8 +1,8 @@
 Binaries/
 Diagnosis/
 Temp/
-/*.set
-/*.isopen
+*.set
+*.isopen
 *.zip
 *~
 ~*
