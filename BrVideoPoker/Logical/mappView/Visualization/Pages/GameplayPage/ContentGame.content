@@ -2,7 +2,7 @@
 <Content id="ContentGame" height="400" width="800" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.Image" id="Image_Card1" top="30" left="10" width="140" height="220" zIndex="0" image="Media/Cards/Minicard_Back.svg" useSVGStyling="false" />
-    <Widget xsi:type="widgets.brease.Button" id="Button_Action" top="320" left="330" width="150" height="60" zIndex="1" text="Action" textAlign="center" fontSize="18px" bold="true" />
+    <Widget xsi:type="widgets.brease.Button" id="Button_Action" top="300" left="330" width="150" height="60" zIndex="1" text="Action" textAlign="center" fontSize="18px" bold="true" />
     <Widget xsi:type="widgets.brease.Label" id="Label_Hold1" top="260" left="30" width="100" zIndex="2" text="HOLD" textColor="rgba(255, 255, 255, 1)" fontSize="28px" bold="true" visible="false" />
     <Widget xsi:type="widgets.brease.Label" id="Label_Hold2" top="260" left="190" width="100" zIndex="3" text="HOLD" textColor="rgba(255, 255, 255, 1)" fontSize="28px" bold="true" visible="false" />
     <Widget xsi:type="widgets.brease.Label" id="Label_Hold3" top="260" left="350" width="100" zIndex="4" text="HOLD" textColor="rgba(255, 255, 255, 1)" fontSize="28px" bold="true" visible="false" />
@@ -12,5 +12,11 @@
     <Widget xsi:type="widgets.brease.Image" id="Image_Card3" top="30" left="330" width="140" height="220" zIndex="8" image="Media/Cards/Minicard_Back.svg" useSVGStyling="false" />
     <Widget xsi:type="widgets.brease.Image" id="Image_Card4" top="30" left="490" width="140" height="220" zIndex="9" image="Media/Cards/Minicard_Back.svg" useSVGStyling="false" />
     <Widget xsi:type="widgets.brease.Image" id="Image_Card5" top="30" left="650" width="140" height="220" zIndex="10" image="Media/Cards/Minicard_Back.svg" useSVGStyling="false" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_Balance" top="370" left="0" zIndex="11" text="Balance:" textColor="rgba(255, 255, 0, 1)" fontName="Arial" bold="true" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Balance" top="370" left="90" width="80" zIndex="12" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_Win" top="370" left="330" width="50" zIndex="13" text="Win:" textColor="rgba(255, 255, 0, 1)" fontName="Arial" bold="true" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Win" top="370" left="390" width="80" zIndex="14" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_Bet" top="370" left="650" width="50" zIndex="15" text="Bet:" textColor="rgba(255, 255, 0, 1)" fontName="Arial" bold="true" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Bet" top="370" left="710" width="80" zIndex="16" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" />
   </Widgets>
 </Content>

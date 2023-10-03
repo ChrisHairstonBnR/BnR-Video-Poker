@@ -17,8 +17,9 @@
 <Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[3]" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold4" attribute="visible" />
 </Binding>
+
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[5]" attribute="value" />
+<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[4]" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold5" attribute="visible" />
 </Binding>
 </Bindings>
