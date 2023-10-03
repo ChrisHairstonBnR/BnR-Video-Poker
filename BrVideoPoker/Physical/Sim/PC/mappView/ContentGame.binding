@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="ContentGame_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:Player.HoldArr[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold5" attribute="visible" />
+</Binding>
+</Bindings>
+</BindingsSet>

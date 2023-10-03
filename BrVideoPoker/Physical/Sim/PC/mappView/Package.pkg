@@ -4,5 +4,7 @@
   <Objects>
     <Object Type="File">Visualizat.vis</Object>
     <Object Type="File">Config.mappviewcfg</Object>
+    <Object Type="File">ContentGame.binding</Object>
+    <Object Type="File">ContentGame.eventbinding</Object>
   </Objects>
 </Package>
