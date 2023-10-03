@@ -1,0 +1,3 @@
+VAR
+	Player : Player_typ;
+END_VAR
