@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="File" Description="Page description">GameplayPage.page</Object>
     <Object Type="File">ContentGame.content</Object>
+    <Object Type="File">ContentTop.content</Object>
   </Objects>
 </Package>
