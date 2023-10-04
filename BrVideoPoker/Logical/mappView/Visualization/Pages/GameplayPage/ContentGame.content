@@ -18,5 +18,8 @@
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Win" top="370" left="390" width="80" zIndex="14" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" />
     <Widget xsi:type="widgets.brease.Label" id="Label_Bet" top="370" left="650" width="50" zIndex="15" text="Bet:" textColor="rgba(255, 255, 0, 1)" fontName="Arial" bold="true" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Bet" top="370" left="710" width="80" zIndex="16" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" />
+    <Widget xsi:type="widgets.brease.FlyOut" id="FlyOut_Bet" top="290" left="0" width="200" height="75" zIndex="17" buttonOffset="20" image="Media/SymbolLib/Symbols/Settings.svg" imageHeight="50" imageWidth="50" imageColor="rgba(255, 255, 255, 1)" buttonBackColor="rgba(255, 255, 255, 0)" backColor="rgba(128, 128, 255, 1)">
+      <Widgets />
+    </Widget>
   </Widgets>
 </Content>
