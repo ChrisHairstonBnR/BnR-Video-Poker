@@ -2,8 +2,12 @@
 <Content id="ContentUser" height="400" width="600" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.Login" id="Login1" top="140" left="160" zIndex="0" />
-    <Widget xsi:type="widgets.brease.LoginInfo" id="LoginInfo" top="370" left="290" width="250" zIndex="1" textColor="rgba(0, 0, 0, 1)" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="Label_LoginInfo" top="370" left="170" width="120" zIndex="2" text="Current User:" textColor="rgba(0, 0, 0, 1)" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.Button" id="Button_AddUser" top="10" left="510" width="80" height="80" zIndex="3" image="Media/SymbolLib/User/AddUser.svg" imageHeight="80" imageWidth="80" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" />
+    <Widget xsi:type="widgets.brease.LoginInfo" id="LoginInfo" top="360" left="290" width="250" zIndex="1" textColor="rgba(0, 0, 0, 1)" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_LoginInfo" top="360" left="170" width="120" zIndex="2" text="Current User:" textColor="rgba(0, 0, 0, 1)" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.Button" id="Button_AddUser" top="10" left="510" width="80" height="110" zIndex="3" image="Media/SymbolLib/User/AddUser.svg" imageAlign="top" text="Sign Up" imageHeight="80" imageWidth="80" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(0, 0, 0, 1)" textAlign="left" />
+    <Widget xsi:type="widgets.brease.UserList" id="UserList1" top="10" left="20" width="110" height="60" zIndex="4" visible="false">
+      <Widgets />
+    </Widget>
+    <Widget xsi:type="widgets.brease.LogoutButton" id="LogoutButton1" top="360" left="60" zIndex="5" text="Logout" />
   </Widgets>
 </Content>
