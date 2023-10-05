@@ -2,4 +2,5 @@ VAR
 	CurrentUser : STRING[80];
 	ArUserSetProperty_FB : ArUserSetProperty;
 	ArUserGetProperty_FB : ArUserGetProperty;
+	UserState : UserState_enum;
 END_VAR

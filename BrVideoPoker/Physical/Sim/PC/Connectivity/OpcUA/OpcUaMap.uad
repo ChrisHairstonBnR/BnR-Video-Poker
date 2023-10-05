@@ -9,13 +9,12 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
-      <Task Name="GameCode">
-        <Variable Name="Player">
-          <Variable Name="Balance" />
-          <Variable Name="Hand" EnableArrayElements="True" />
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gCurrentPlayer" AutomaticEnable="True">
           <Variable Name="HoldArr" EnableArrayElements="True" />
         </Variable>
-      </Task>
+      </GlobalVariables>
+      <Task Name="GameCode" />
       <Task Name="UserSys">
         <Variable Name="CurrentUser" />
       </Task>
