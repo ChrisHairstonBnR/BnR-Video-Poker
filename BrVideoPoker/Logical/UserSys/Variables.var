@@ -1,0 +1,5 @@
+VAR
+	CurrentUser : STRING[80];
+	ArUserSetProperty_FB : ArUserSetProperty;
+	ArUserGetProperty_FB : ArUserGetProperty;
+END_VAR

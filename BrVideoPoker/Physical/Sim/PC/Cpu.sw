@@ -6,6 +6,7 @@
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="GameCode" Source="GameCode.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="UserSys" Source="UserSys.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <Libraries>
     <LibraryObject Name="PseudoRNG" Source="Libraries.PseudoRNG.lby" Memory="UserROM" Language="IEC" Debugging="true" />
@@ -14,5 +15,8 @@
     <LibraryObject Name="astime" Source="Libraries.astime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsIoTime" Source="Libraries.AsIoTime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="Cards" Source="Libraries.Cards.lby" Memory="UserROM" Language="IEC" Debugging="true" />
+    <LibraryObject Name="MpUserX" Source="Libraries.MpUserX.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpBase" Source="Libraries.MpBase.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="ArUser" Source="Libraries.ArUser.lby" Memory="UserROM" Language="binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

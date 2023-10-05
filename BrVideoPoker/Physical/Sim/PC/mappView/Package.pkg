@@ -6,5 +6,7 @@
     <Object Type="File">Config.mappviewcfg</Object>
     <Object Type="File">ContentGame.binding</Object>
     <Object Type="File">ContentGame.eventbinding</Object>
+    <Object Type="File">ContentUser.eventbinding</Object>
+    <Object Type="File">ContentTop.eventbinding</Object>
   </Objects>
 </Package>

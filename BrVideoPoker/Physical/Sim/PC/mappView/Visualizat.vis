@@ -10,10 +10,15 @@
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentGame_eventbinding" />
+    <EventBindingsSet refId="ContentUser_eventbinding" />
+    <EventBindingsSet refId="ContentTop_eventbinding" />
   </EventBindingsSets>
-  <Dialogs />
+  <Dialogs>
+    <Dialog refId="DialogUser" />
+  </Dialogs>
   <Contents>
     <Content refId="ContentTop" />
+    <Content refId="ContentUser" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
