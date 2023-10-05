@@ -18,9 +18,6 @@
       </Task>
       <Task Name="UserSys">
         <Variable Name="CurrentUser" />
-        <Variable Name="MpUserXManagerUI_Connect" AutomaticEnable="True" />
-        <Variable Name="MpUserXManagerUI_FB" AutomaticEnable="True" />
-        <Variable Name="MpUserXManagerUI_Setup" AutomaticEnable="True" />
       </Task>
     </Module>
   </DefaultView>
