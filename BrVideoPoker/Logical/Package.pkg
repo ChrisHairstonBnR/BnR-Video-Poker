@@ -8,5 +8,6 @@
     <Object Type="Package">mappView</Object>
     <Object Type="Program" Language="IEC">GameCode</Object>
     <Object Type="Program" Language="IEC">UserSys</Object>
+    <Object Type="Program" Language="IEC">VisCtrl</Object>
   </Objects>
 </Package>

@@ -18,8 +18,12 @@
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Win" top="370" left="370" width="150" zIndex="14" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" padding="0px 5px 0px 5px" />
     <Widget xsi:type="widgets.brease.Label" id="Label_Bet" top="370" left="650" width="50" zIndex="15" text="Bet:" textColor="rgba(255, 255, 0, 1)" fontName="Arial" bold="true" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_Bet" top="370" left="700" zIndex="16" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" textColor="rgba(255, 255, 0, 1)" textAlign="left" fontSize="14px" padding="0px 5px 0px 5px" />
-    <Widget xsi:type="widgets.brease.FlyOut" id="FlyOut_Bet" top="290" left="0" width="200" height="75" zIndex="17" buttonOffset="20" image="Media/SymbolLib/Symbols/Settings.svg" imageHeight="50" imageWidth="50" imageColor="rgba(255, 255, 255, 1)" buttonBackColor="rgba(255, 255, 255, 0)" backColor="rgba(128, 128, 255, 1)">
-      <Widgets />
+    <Widget xsi:type="widgets.brease.FlyOut" id="FlyOut_Bet" top="290" left="0" width="200" height="75" zIndex="17" autoClose="true" buttonOffset="20" docking="right" image="Media/SymbolLib/Symbols/Settings.svg" imageHeight="50" imageWidth="50" imageColor="rgba(255, 255, 255, 1)" buttonBackColor="rgba(255, 255, 255, 0)" backColor="rgba(128, 128, 255, 1)">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput_BetChoice" top="20" left="50" zIndex="0" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_IncreaseBet" top="20" left="150" width="30" zIndex="1" text="+" borderWidth="2px" cornerRadius="5px" fontSize="24px" bold="true" padding="0px 0px" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_DecreaseBet" top="20" left="20" width="30" zIndex="2" text="-" cornerRadius="5px" fontSize="24px" bold="true" padding="0px 0px" />
+      </Widgets>
     </Widget>
   </Widgets>
 </Content>

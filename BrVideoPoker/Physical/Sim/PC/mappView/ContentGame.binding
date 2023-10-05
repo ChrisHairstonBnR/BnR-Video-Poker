@@ -31,5 +31,13 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gCurrentPlayer.Balance" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Balance" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:BetOutput" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Bet" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:BetOutput" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_BetChoice" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

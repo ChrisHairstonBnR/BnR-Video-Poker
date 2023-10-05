@@ -51,5 +51,35 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="ContentGame.Button_IncreaseBet.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentGame" widgetRefId="Button_IncreaseBet" event="Click" />
+      <Operand datatype="ANY_INT" name="BetIndex">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::VisCtrl:BetIndex">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="BetIndex &lt; 5">
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::VisCtrl:BetIndex">
+            <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentGame.Button_DecreaseBet.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentGame" widgetRefId="Button_DecreaseBet" event="Click" />
+      <Operand datatype="ANY_INT" name="BetIndex">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::VisCtrl:BetIndex">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="BetIndex &gt; 0">
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::VisCtrl:BetIndex">
+            <Method xsi:type="opcUa.NodeAction.AddValue" value="-1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

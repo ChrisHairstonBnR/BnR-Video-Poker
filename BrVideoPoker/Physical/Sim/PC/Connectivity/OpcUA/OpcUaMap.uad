@@ -18,6 +18,10 @@
       <Task Name="UserSys">
         <Variable Name="CurrentUser" />
       </Task>
+      <Task Name="VisCtrl">
+        <Variable Name="BetIndex" />
+        <Variable Name="BetOutput" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>
