@@ -1,4 +1,3 @@
 VAR
 	BetIndex : USINT;
-	BetOutput : REAL;
 END_VAR

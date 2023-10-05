@@ -6,7 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
-	BetOutput := BET_ARRAY[BetIndex];
+	gCurrentPlayer.ChosenBet := BET_ARRAY[BetIndex];
 	
 END_PROGRAM
 

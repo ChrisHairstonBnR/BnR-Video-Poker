@@ -20,7 +20,6 @@
       </Task>
       <Task Name="VisCtrl">
         <Variable Name="BetIndex" />
-        <Variable Name="BetOutput" />
       </Task>
     </Module>
   </DefaultView>
