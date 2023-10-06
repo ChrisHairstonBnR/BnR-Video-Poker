@@ -28,9 +28,26 @@ TYPE
 		FIVECARDPOKER_STRAIGHT_FLUSH,
 		FIVECARDPOKER_ROYAL_FLUSH
 		);
+	HandBools_typ : 	STRUCT 
+		FacePair : BOOL;
+		TwoPair : BOOL;
+		ThreeOfAKind : BOOL;
+		Straight : BOOL;
+		Flush : BOOL;
+		FullHouse : BOOL;
+		FourAny : BOOL;
+		FourJQK : BOOL;
+		FourAces : BOOL;
+		RoyalFlush : BOOL;
+	END_STRUCT;
 	PayTable_typ : 	STRUCT 
 		Hands : ARRAY[0..13]OF FiveCardPoker_enum := [FIVECARDPOKER_NOTHING,13(0)];
 		WinningsScalarArr : ARRAY[0..13]OF REAL; (*Amount to multiply bet for winnings if that hand is achieved.*)
 		GameVariant : GameVariant_enum;
+	END_STRUCT;
+	PayTableConst_typ : 	STRUCT 
+		Hands : ARRAY[0..13]OF USINT := [14(0)];
+		WinningsScalarArr : ARRAY[0..13]OF REAL; (*Amount to multiply bet for winnings if that hand is achieved.*)
+		GameVariant : USINT;
 	END_STRUCT;
 END_TYPE

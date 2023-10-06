@@ -5,7 +5,7 @@
     <File Description="Exported data types">Types.typ</File>
     <File Description="Exported constants">Constants.var</File>
     <File Description="Exported functions and function blocks">Cards.fun</File>
-    <File>CardFB.st</File>
+    <File>CardsFB.st</File>
     <File>SwapCard.st</File>
   </Files>
 </Library>

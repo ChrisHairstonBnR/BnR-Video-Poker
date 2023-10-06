@@ -1,6 +1,6 @@
 
 (* Deck Funtionality *)
-FUNCTION_BLOCK CardFB
+FUNCTION_BLOCK CardsFB
 	CASE State OF
 		DECKSTATE_INIT:
 			IF Enable AND NOT Initialized THEN
