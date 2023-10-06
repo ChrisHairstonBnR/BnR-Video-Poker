@@ -1,7 +1,7 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
-	 
+	 gCurrentGame;
 END_PROGRAM
 
 PROGRAM _CYCLIC

@@ -4,3 +4,6 @@ END_VAR
 VAR CONSTANT
 	BET_ARRAY : ARRAY[0..5] OF REAL := [0.1,0.2,0.5,1,2,5];
 END_VAR
+VAR
+	gCurrentGame : GameVariant_enum;
+END_VAR

@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <vdef:Visualization id="PokerVis" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
-  <StartPage pageRefId="GameplayPage" />
+  <StartPage pageRefId="HomePage" />
   <Pages>
     <Page refId="GameplayPage" />
+    <Page refId="HomePage" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -12,6 +13,7 @@
     <EventBindingsSet refId="ContentGame_eventbinding" />
     <EventBindingsSet refId="ContentUser_eventbinding" />
     <EventBindingsSet refId="ContentTop_eventbinding" />
+    <EventBindingsSet refId="ContentHome_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="DialogUser" />
@@ -19,6 +21,7 @@
   <Contents>
     <Content refId="ContentTop" />
     <Content refId="ContentUser" />
+    <Content refId="ContentHome" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />

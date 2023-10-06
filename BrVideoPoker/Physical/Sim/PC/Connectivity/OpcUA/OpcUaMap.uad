@@ -13,6 +13,7 @@
         <Variable Name="gCurrentPlayer" AutomaticEnable="True">
           <Variable Name="HoldArr" EnableArrayElements="True" />
         </Variable>
+        <Variable Name="gCurrentGame" />
       </GlobalVariables>
       <Task Name="GameCode" />
       <Task Name="UserSys">
