@@ -5,7 +5,7 @@
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card1" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentPlayer.HoldArr[0]">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[0]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
           </Target>
         </Action>
@@ -15,7 +15,7 @@
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card2" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentPlayer.HoldArr[1]">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[1]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
           </Target>
         </Action>
@@ -25,7 +25,7 @@
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card3" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentPlayer.HoldArr[2]">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[2]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
           </Target>
         </Action>
@@ -35,7 +35,7 @@
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card4" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentPlayer.HoldArr[3]">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[3]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
           </Target>
         </Action>
@@ -45,7 +45,7 @@
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card5" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentPlayer.HoldArr[4]">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[4]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
           </Target>
         </Action>
@@ -77,6 +77,16 @@
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::VisCtrl:BetIndex">
             <Method xsi:type="opcUa.NodeAction.AddValue" value="-1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentGame.Button_Action.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentGame" widgetRefId="Button_Action" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCommand.CMD_Action">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
       </EventHandler>

@@ -18,6 +18,9 @@
           <Variable Name="ChosenBet" />
           <Variable Name="Winnings" />
         </Variable>
+        <Variable Name="gCommand">
+          <Variable Name="CMD_Action" />
+        </Variable>
       </GlobalVariables>
       <Task Name="GameCode" />
       <Task Name="UserSys">
@@ -25,6 +28,7 @@
       </Task>
       <Task Name="VisCtrl">
         <Variable Name="BetIndex" />
+        <Variable Name="CardStr" EnableArrayElements="True" />
       </Task>
     </Module>
   </DefaultView>

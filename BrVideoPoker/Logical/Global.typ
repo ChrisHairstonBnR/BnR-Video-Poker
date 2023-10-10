@@ -6,6 +6,7 @@ TYPE
 		HoldArr : ARRAY[0..4]OF BOOL;
 		ChosenBet : REAL;
 		Winnings : REAL;
+		ActiveRound : BOOL;
 		Result : FiveCardPoker_enum;
 	END_STRUCT;
 	Command_typ : 	STRUCT 

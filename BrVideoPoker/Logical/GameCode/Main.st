@@ -12,7 +12,7 @@ PROGRAM _CYCLIC
 	
 	CASE GameState OF
 		GAME_STATE_WAIT:
-			
+			gPlayer.ActiveRound := FALSE;
 			IF gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
 				GameState := GAME_STATE_SHUFFLE;
@@ -26,6 +26,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		GAME_STATE_DEAL:
+			gPlayer.ActiveRound := TRUE;
 			FOR DeckCardCount := 0 TO 4 DO
 				gPlayer.Hand[DeckCardCount] := gDeck.Deck[DeckCardCount];
 			END_FOR
@@ -44,7 +45,7 @@ PROGRAM _CYCLIC
 			DeckCardCount := 5;
 			
 			FOR i := 0 TO 4 DO
-				IF gPlayer.HoldArr[i] THEN
+				IF  NOT gPlayer.HoldArr[i] THEN
 					gPlayer.HoldArr[i] := FALSE;
 					gPlayer.Hand[i] := gDeck.Deck[DeckCardCount];
 					DeckCardCount := DeckCardCount + 1;
@@ -54,8 +55,12 @@ PROGRAM _CYCLIC
 			GameState := GAME_STATE_RESULTS;
 			
 		GAME_STATE_RESULTS:
-			Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
-		
+			gPlayer.Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
+			
+			IF gCommand.CMD_Action THEN
+				gCommand.CMD_Action := FALSE;
+				GameState := GAME_STATE_WAIT;
+			END_IF	
 		GAME_STATE_ERROR:
 		
 	END_CASE

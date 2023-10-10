@@ -48,5 +48,25 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.Balance" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Balance" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card3" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card2" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card1" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card4" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card5" attribute="image" />
+</Binding>
 </Bindings>
 </BindingsSet>

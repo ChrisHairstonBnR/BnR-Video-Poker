@@ -1,3 +1,5 @@
 VAR
+	CardStr : ARRAY[0..4] OF STRING[80];
 	BetIndex : USINT;
+	i : USINT;
 END_VAR
