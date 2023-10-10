@@ -46,9 +46,10 @@ PROGRAM _CYCLIC
 			
 			FOR i := 0 TO 4 DO
 				IF  NOT gPlayer.HoldArr[i] THEN
-					gPlayer.HoldArr[i] := FALSE;
 					gPlayer.Hand[i] := gDeck.Deck[DeckCardCount];
 					DeckCardCount := DeckCardCount + 1;
+				ELSE
+					gPlayer.HoldArr[i] := FALSE;
 				END_IF
 			END_FOR
 					
