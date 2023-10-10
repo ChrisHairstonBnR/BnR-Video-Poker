@@ -12,6 +12,8 @@ PROGRAM _CYCLIC
 	
 	CASE GameState OF
 		GAME_STATE_WAIT:
+			gPlayer.Result := FIVECARDPOKER_NOTHING;
+			gPlayer.Winnings := 0;
 			gPlayer.ActiveRound := FALSE;
 			IF gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;

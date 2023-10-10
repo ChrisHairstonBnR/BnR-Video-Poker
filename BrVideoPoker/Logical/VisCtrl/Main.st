@@ -57,10 +57,39 @@ PROGRAM _CYCLIC
 			END_CASE
 			
 			CardStr[i] := CONCAT(CardStr[i], '.svg');
-		END_IF
-		
-			
+		END_IF	
 	END_FOR
+	
+	CASE gPlayer.Result OF
+		FIVECARDPOKER_NOTHING:
+			ResultStr := '';
+		FIVECARDPOKER_PAIR_FACE:
+			ResultStr := 'Pair';
+		FIVECARDPOKER_TWO_PAIR:
+			ResultStr := 'Two Pair';
+		FIVECARDPOKER_THREE_OF_A_KIND:
+			ResultStr := 'Three of a Kind';
+		FIVECARDPOKER_FULL_HOUSE:
+			ResultStr := 'Full House';
+		FIVECARDPOKER_STRAIGHT:
+			ResultStr := 'Straight';
+		FIVECARDPOKER_FLUSH:
+			ResultStr := 'Flush';
+		FIVECARDPOKER_STRAIGHT_FLUSH:
+			ResultStr := 'Straight Flush';
+		FIVECARDPOKER_FOUR_ANY:
+			ResultStr := 'Four of a Kind';
+		FIVECARDPOKER_FOUR_EIGHTS:
+			ResultStr := 'Four Eights';
+		FIVECARDPOKER_FOUR_JQK:
+			ResultStr := 'Four of a Face';
+		FIVECARDPOKER_FOUR_ACES:
+			ResultStr := 'Four Aces';
+		FIVECARDPOKER_ROYAL_FLUSH:
+			ResultStr := 'Royal Flush!';
+	END_CASE;
+	
+			
 	
 END_PROGRAM
 
