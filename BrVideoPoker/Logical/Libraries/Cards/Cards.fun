@@ -10,7 +10,7 @@
 	END_VAR
 END_FUNCTION
 
-FUNCTION_BLOCK CardsFB (*Core funciton block of the library*)
+FUNCTION_BLOCK DeckFB (*Core funciton block of the library*)
 	VAR_INPUT
 		CMD_Shuffle : BOOL;
 		Enable : BOOL;
@@ -18,9 +18,9 @@ FUNCTION_BLOCK CardsFB (*Core funciton block of the library*)
 	VAR_OUTPUT
 		Deck : ARRAY[0..51] OF Card_typ;
 		Active : BOOL;
+		CommandDone : BOOL;
 	END_VAR
 	VAR
-		CommandDone : BOOL;
 		IndexI : USINT;
 		IndexJ : USINT;
 		IndexR : USINT;

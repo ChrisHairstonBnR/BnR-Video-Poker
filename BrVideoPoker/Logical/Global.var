@@ -6,4 +6,6 @@ VAR CONSTANT
 END_VAR
 VAR
 	gCurrentGame : GameVariant_enum;
+	gCommand : Command_typ;
+	gDeck : DeckFB;
 END_VAR

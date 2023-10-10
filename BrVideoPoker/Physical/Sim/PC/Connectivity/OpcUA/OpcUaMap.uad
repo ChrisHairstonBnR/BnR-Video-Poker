@@ -16,6 +16,7 @@
           <Variable Name="Hand" EnableArrayElements="True" />
           <Variable Name="HoldArr" EnableArrayElements="True" />
           <Variable Name="ChosenBet" />
+          <Variable Name="Winnings" />
         </Variable>
       </GlobalVariables>
       <Task Name="GameCode" />
