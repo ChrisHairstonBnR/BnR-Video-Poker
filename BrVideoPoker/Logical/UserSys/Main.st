@@ -7,7 +7,7 @@ END_PROGRAM
 PROGRAM _CYCLIC
 	CASE UserState OF
 		USERSTATE_WAITINGFORUSER:
-			gCurrentPlayer.Balance := 0;
+			gPlayer.Balance := 0;
 			ArUserSetProperty_FB.Execute := FALSE;
 			
 			IF CurrentUser <> '' AND CurrentUser <> 'Anonymous' THEN
@@ -23,11 +23,11 @@ PROGRAM _CYCLIC
 			//-1070585892: Specified element does not exist 
 			IF ArUserGetProperty_FB.Error AND ArUserGetProperty_FB.ErrorID = arUSER_ERR_DOES_NOT_EXIST THEN //if property doesnt exist we will create it
 				UserState := USERSTATE_RUN;
-				gCurrentPlayer.Balance := 100;
+				gPlayer.Balance := 100;
 				ArUserGetProperty_FB.Execute := FALSE;
 			ELSIF ArUserGetProperty_FB.Done THEN
 				UserState := USERSTATE_RUN;
-				gCurrentPlayer.Balance := STRING_TO_REAL(ArUserGetProperty_FB.PropertyValue);
+				gPlayer.Balance := STRING_TO_REAL(ArUserGetProperty_FB.PropertyValue);
 				ArUserGetProperty_FB.Execute := FALSE;
 			ELSIF ArUserGetProperty_FB.Error THEN
 				UserState := USERSTATE_ERROR;
@@ -39,7 +39,7 @@ PROGRAM _CYCLIC
 			ArUserSetProperty_FB.ElementName := CurrentUser;
 			ArUserSetProperty_FB.ElementType := arUSER_USER_PROPERTIES;
 			ArUserSetProperty_FB.PropertyName := 'Balance';
-			ArUserSetProperty_FB.PropertyValue := REAL_TO_STRING(gCurrentPlayer.Balance);
+			ArUserSetProperty_FB.PropertyValue := REAL_TO_STRING(gPlayer.Balance);
 			ArUserSetProperty_FB.Execute := TRUE;
 			
 			IF ArUserSetProperty_FB.Done THEN

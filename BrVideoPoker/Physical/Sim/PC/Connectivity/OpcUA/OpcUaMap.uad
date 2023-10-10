@@ -10,10 +10,13 @@
   <DefaultView>
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
-        <Variable Name="gCurrentPlayer" AutomaticEnable="True">
-          <Variable Name="HoldArr" EnableArrayElements="True" />
-        </Variable>
         <Variable Name="gCurrentGame" />
+        <Variable Name="gPlayer">
+          <Variable Name="Balance" />
+          <Variable Name="Hand" EnableArrayElements="True" />
+          <Variable Name="HoldArr" EnableArrayElements="True" />
+          <Variable Name="ChosenBet" />
+        </Variable>
       </GlobalVariables>
       <Task Name="GameCode" />
       <Task Name="UserSys">

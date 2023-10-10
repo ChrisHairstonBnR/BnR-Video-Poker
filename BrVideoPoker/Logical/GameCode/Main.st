@@ -5,8 +5,10 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	(* Insert code here *)
-	 TestTable := PAY_TABLE_JACKS_OR_BETTER;
+	 //TestTable := PAY_TABLE_JACKS_OR_BETTER;
+	gPlayer.Hand := TestHand;
+	Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
+	
 END_PROGRAM
 
 PROGRAM _EXIT

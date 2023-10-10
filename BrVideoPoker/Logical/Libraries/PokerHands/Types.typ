@@ -29,16 +29,17 @@ TYPE
 		FIVECARDPOKER_ROYAL_FLUSH
 		);
 	HandBools_typ : 	STRUCT 
+		AnyPair : BOOL;
 		FacePair : BOOL;
 		TwoPair : BOOL;
 		ThreeOfAKind : BOOL;
 		Straight : BOOL;
 		Flush : BOOL;
-		FullHouse : BOOL;
 		FourAny : BOOL;
+		FourEights : BOOL;
 		FourJQK : BOOL;
 		FourAces : BOOL;
-		RoyalFlush : BOOL;
+		Royal : BOOL;
 	END_STRUCT;
 	PayTable_typ : 	STRUCT 
 		Hands : ARRAY[0..13]OF FiveCardPoker_enum := [FIVECARDPOKER_NOTHING,13(0)];

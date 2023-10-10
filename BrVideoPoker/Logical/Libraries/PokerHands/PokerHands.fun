@@ -5,7 +5,16 @@
 		GameVariant : GameVariant_enum;
 	END_VAR
 	VAR
+		ColumnTotals : ARRAY[1..14] OF USINT;
+		RowTotals : ARRAY[0..3] OF USINT;
+		i : USINT;
+		j : USINT;
+		k : USINT;
+		CardMatrix : ARRAY[0..3,1..14] OF BOOL;
+		tempHand : ARRAY[0..4] OF Card_typ;
 		ResultBools : HandBools_typ;
+		StraightCount : USINT;
+		PairCount : USINT;
 	END_VAR
 END_FUNCTION
 
