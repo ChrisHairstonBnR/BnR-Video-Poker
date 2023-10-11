@@ -20,7 +20,7 @@ END_FUNCTION
 
 {REDUND_ERROR} FUNCTION CalculateWinnings : REAL (*TODO: Add your comment here*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
 	VAR_INPUT
-		PlayerHand : FiveCardPoker_enum;
+		PlayerHandResult : FiveCardPoker_enum;
 		Bet : REAL;
 	END_VAR
 	VAR_IN_OUT

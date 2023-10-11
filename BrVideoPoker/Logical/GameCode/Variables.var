@@ -1,7 +1,8 @@
 VAR
-	TestTable : {REDUND_UNREPLICABLE} PayTable_typ := (0);
+	PayTable : {REDUND_UNREPLICABLE} PayTable_typ := (0);
 	TestHand : ARRAY[0..4] OF Card_typ := [(Face:=CARD_ACE,Suit:=SUIT_HEARTS),(Face:=CARD_TWO,Suit:=SUIT_CLUBS),(Face:=CARD_THREE,Suit:=SUIT_DIAMONDS),(Face:=CARD_FOUR,Suit:=SUIT_SPADES),(Face:=CARD_FIVE,Suit:=SUIT_HEARTS)];
 	GameState : GameState_enum;
 	DeckCardCount : USINT;
 	i : USINT;
+	R_TRIG_ResultState : R_TRIG;
 END_VAR

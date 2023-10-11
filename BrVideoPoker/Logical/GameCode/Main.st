@@ -29,6 +29,7 @@ PROGRAM _CYCLIC
 		
 		GAME_STATE_DEAL:
 			gPlayer.ActiveRound := TRUE;
+			gPlayer.Balance := gPlayer.Balance - gPlayer.ChosenBet;
 			FOR DeckCardCount := 0 TO 4 DO
 				gPlayer.Hand[DeckCardCount] := gDeck.Deck[DeckCardCount];
 			END_FOR
@@ -59,6 +60,34 @@ PROGRAM _CYCLIC
 			
 		GAME_STATE_RESULTS:
 			gPlayer.Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
+
+			//Choose pay table based on game
+			CASE gCurrentGame OF
+				GAME_NONE:
+					
+				GAME_BONUS_POKER:
+					
+				GAME_DOUBLE_BONUS_POKER:
+					
+				GAME_TRIPLE_BONUS_POKER:
+					
+				GAME_ULTRA_BONUS_POKER:
+				
+				GAME_ALL_AMERICAN:
+				
+				GAME_JACKS_OR_BETTER:
+					PayTable := PAY_TABLE_JACKS_OR_BETTER;
+				GAME_ACES_AND_EIGHTS:
+				
+				GAME_ACES_AND_FACES:
+				
+			END_CASE
+			
+			gPlayer.Winnings := CalculateWinnings(gPlayer.Result, gPlayer.ChosenBet, PayTable);
+			
+			IF R_TRIG_ResultState.Q THEN
+				gPlayer.Balance := gPlayer.Balance + gPlayer.Winnings;
+			END_IF
 			
 			IF gCommand.CMD_Confirm OR gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
@@ -69,6 +98,9 @@ PROGRAM _CYCLIC
 		GAME_STATE_ERROR:
 		
 	END_CASE
+	
+	//R Trig to ensure winnings are only given once
+	R_TRIG_ResultState(CLK := (GameState = GAME_STATE_RESULTS));
 	
 	//Deck custom FB
 	gDeck.Enable := TRUE;
