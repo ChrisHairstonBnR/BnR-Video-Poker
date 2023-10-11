@@ -18,6 +18,7 @@
           <Variable Name="ChosenBet" />
           <Variable Name="Winnings" />
           <Variable Name="Result" />
+          <Variable Name="LoggedIn" />
         </Variable>
         <Variable Name="gCommand" AutomaticEnable="True">
           <Variable Name="CMD_Action" />
@@ -34,6 +35,8 @@
         <Variable Name="CardStr" EnableArrayElements="True" />
         <Variable Name="EnableBetting" />
         <Variable Name="ResultStr" />
+        <Variable Name="GameStr" />
+        <Variable Name="NotLoggedIn" />
       </Task>
     </Module>
   </DefaultView>

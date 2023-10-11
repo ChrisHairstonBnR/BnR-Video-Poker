@@ -72,5 +72,13 @@
 <Source xsi:type="opcUa" refId="::VisCtrl:EnableBetting" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="FlyOut_Bet" attribute="visible" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.LoggedIn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Button_Action" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:NotLoggedIn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_NotLoggedIn" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>

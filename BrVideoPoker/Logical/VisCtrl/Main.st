@@ -89,7 +89,30 @@ PROGRAM _CYCLIC
 			ResultStr := 'Royal Flush!';
 	END_CASE;
 	
+	
+	CASE gCurrentGame OF
+		GAME_NONE:
+			GameStr := '';
+		GAME_BONUS_POKER:
+			GameStr := 'Bonus Poker';
+		GAME_DOUBLE_BONUS_POKER:
+			GameStr := 'Double Bonus Poker';
+		GAME_TRIPLE_BONUS_POKER:
+			GameStr := 'Triple Bonus Poker';
+		GAME_ULTRA_BONUS_POKER:
+			GameStr := 'Ultra Bonus Poker';
+		GAME_ALL_AMERICAN:
+			GameStr := 'All American';
+		GAME_JACKS_OR_BETTER:
+			GameStr := 'Jacks or Better';
+		GAME_ACES_AND_EIGHTS:
+			GameStr := 'Aces & Eights';
+		GAME_ACES_AND_FACES:
+			GameStr := 'Aces & Faces';
+	END_CASE
+	
 	EnableBetting := NOT gPlayer.ActiveRound; //Betting should only be enabled when the round is not active
+	NotLoggedIn := NOT gPlayer.LoggedIn;
 			
 	
 END_PROGRAM

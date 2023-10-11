@@ -11,5 +11,6 @@
     <Object Type="File">ContentHome.eventbinding</Object>
     <Object Type="File">ContentResult.binding</Object>
     <Object Type="File">ContentResult.eventbinding</Object>
+    <Object Type="File">ContentTop.binding</Object>
   </Objects>
 </Package>

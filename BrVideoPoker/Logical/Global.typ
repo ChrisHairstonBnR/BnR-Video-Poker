@@ -8,6 +8,7 @@ TYPE
 		Winnings : REAL;
 		ActiveRound : BOOL;
 		Result : FiveCardPoker_enum;
+		LoggedIn : BOOL;
 	END_STRUCT;
 	Command_typ : 	STRUCT 
 		CMD_Confirm : BOOL;

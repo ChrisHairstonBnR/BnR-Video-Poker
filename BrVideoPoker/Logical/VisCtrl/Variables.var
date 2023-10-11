@@ -4,4 +4,6 @@ VAR
 	i : USINT;
 	ResultStr : STRING[80];
 	EnableBetting : BOOL;
+	GameStr : STRING[80];
+	NotLoggedIn : BOOL;
 END_VAR

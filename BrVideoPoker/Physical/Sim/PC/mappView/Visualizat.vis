@@ -9,6 +9,7 @@
   <BindingsSets>
     <BindingsSet refId="ContentGame_binding" />
     <BindingsSet refId="ContentResult_binding" />
+    <BindingsSet refId="ContentTop_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentGame_eventbinding" />

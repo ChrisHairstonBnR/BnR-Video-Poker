@@ -9,6 +9,7 @@ PROGRAM _CYCLIC
 		USERSTATE_WAITINGFORUSER:
 			gPlayer.Balance := 0;
 			ArUserSetProperty_FB.Execute := FALSE;
+			gPlayer.LoggedIn := FALSE;
 			
 			IF CurrentUser <> '' AND CurrentUser <> 'Anonymous' THEN
 				UserState := USERSTATE_GETBALANCE;
@@ -19,6 +20,8 @@ PROGRAM _CYCLIC
 			ArUserGetProperty_FB.ElementType := arUSER_USER_PROPERTIES;
 			ArUserGetProperty_FB.PropertyName := 'Balance';
 			ArUserGetProperty_FB.Execute := TRUE;
+			
+			gPlayer.LoggedIn := TRUE;
 				
 			//-1070585892: Specified element does not exist 
 			IF ArUserGetProperty_FB.Error AND ArUserGetProperty_FB.ErrorID = arUSER_ERR_DOES_NOT_EXIST THEN //if property doesnt exist we will create it

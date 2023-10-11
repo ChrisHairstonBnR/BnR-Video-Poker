@@ -3,7 +3,12 @@
   <Bindings>
     <EventBinding id="ContentGame.Image_Card1.Click">
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card1" event="Click" />
-      <EventHandler>
+      <Operand datatype="ANY_INT" name="GameState">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::GameCode:GameState">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="GameState = 3">
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[0]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
@@ -13,7 +18,12 @@
     </EventBinding>
     <EventBinding id="ContentGame.Image_Card2.Click">
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card2" event="Click" />
-      <EventHandler>
+      <Operand datatype="ANY_INT" name="GameState">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::GameCode:GameState">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="GameState = 3">
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[1]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
@@ -23,7 +33,12 @@
     </EventBinding>
     <EventBinding id="ContentGame.Image_Card3.Click">
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card3" event="Click" />
-      <EventHandler>
+      <Operand datatype="ANY_INT" name="GameState">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::GameCode:GameState">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="GameState = 3">
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[2]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
@@ -33,7 +48,12 @@
     </EventBinding>
     <EventBinding id="ContentGame.Image_Card4.Click">
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card4" event="Click" />
-      <EventHandler>
+      <Operand datatype="ANY_INT" name="GameState">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::GameCode:GameState">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="GameState = 3">
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[3]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
@@ -43,7 +63,12 @@
     </EventBinding>
     <EventBinding id="ContentGame.Image_Card5.Click">
       <Source xsi:type="widgets.brease.Image.Event" contentRefId="ContentGame" widgetRefId="Image_Card5" event="Click" />
-      <EventHandler>
+      <Operand datatype="ANY_INT" name="GameState">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::GameCode:GameState">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="GameState = 3">
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gPlayer.HoldArr[4]">
             <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
@@ -87,6 +112,16 @@
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCommand.CMD_Action">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentGame.Label_NotLoggedIn.Click">
+      <Source xsi:type="widgets.brease.Label.Event" contentRefId="ContentGame" widgetRefId="Label_NotLoggedIn" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="DialogUser" />
           </Target>
         </Action>
       </EventHandler>
