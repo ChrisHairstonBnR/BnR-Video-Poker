@@ -5,4 +5,5 @@ VAR
 	DeckCardCount : USINT;
 	i : USINT;
 	R_TRIG_ResultState : R_TRIG;
+	ActionButtonStr : STRING[80];
 END_VAR

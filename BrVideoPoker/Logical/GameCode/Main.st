@@ -15,6 +15,9 @@ PROGRAM _CYCLIC
 			gPlayer.Result := FIVECARDPOKER_NOTHING;
 			gPlayer.Winnings := 0;
 			gPlayer.ActiveRound := FALSE;
+			
+			ActionButtonStr := 'Play';
+			
 			IF gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
 				GameState := GAME_STATE_SHUFFLE;
@@ -38,7 +41,7 @@ PROGRAM _CYCLIC
 		
 		GAME_STATE_HOLD:
 			//Wait for user to select cards to hold
-			
+			ActionButtonStr := 'Continue';
 			IF gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
 				GameState := GAME_STATE_REDEAL;
@@ -60,7 +63,7 @@ PROGRAM _CYCLIC
 			
 		GAME_STATE_RESULTS:
 			gPlayer.Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
-
+			ActionButtonStr := 'Clear';
 			//Choose pay table based on game
 			CASE gCurrentGame OF
 				GAME_NONE:

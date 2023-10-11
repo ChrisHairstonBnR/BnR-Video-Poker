@@ -80,5 +80,9 @@
 <Source xsi:type="opcUa" refId="::VisCtrl:NotLoggedIn" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_NotLoggedIn" attribute="visible" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:ActionButtonStr" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Button_Action" attribute="text" />
+</Binding>
 </Bindings>
 </BindingsSet>

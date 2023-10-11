@@ -26,6 +26,7 @@
       </GlobalVariables>
       <Task Name="GameCode">
         <Variable Name="GameState" />
+        <Variable Name="ActionButtonStr" />
       </Task>
       <Task Name="UserSys">
         <Variable Name="CurrentUser" />
