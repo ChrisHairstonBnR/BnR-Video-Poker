@@ -59,35 +59,9 @@ PROGRAM _CYCLIC
 			CardStr[i] := CONCAT(CardStr[i], '.svg');
 		END_IF	
 	END_FOR
+
 	
-	CASE gPlayer.Result OF
-		FIVECARDPOKER_NOTHING:
-			ResultStr := '';
-		FIVECARDPOKER_PAIR_FACE:
-			ResultStr := 'Pair';
-		FIVECARDPOKER_TWO_PAIR:
-			ResultStr := 'Two Pair';
-		FIVECARDPOKER_THREE_OF_A_KIND:
-			ResultStr := 'Three of a Kind';
-		FIVECARDPOKER_FULL_HOUSE:
-			ResultStr := 'Full House';
-		FIVECARDPOKER_STRAIGHT:
-			ResultStr := 'Straight';
-		FIVECARDPOKER_FLUSH:
-			ResultStr := 'Flush';
-		FIVECARDPOKER_STRAIGHT_FLUSH:
-			ResultStr := 'Straight Flush';
-		FIVECARDPOKER_FOUR_ANY:
-			ResultStr := 'Four of a Kind';
-		FIVECARDPOKER_FOUR_EIGHTS:
-			ResultStr := 'Four Eights';
-		FIVECARDPOKER_FOUR_JQK:
-			ResultStr := 'Four of a Face';
-		FIVECARDPOKER_FOUR_ACES:
-			ResultStr := 'Four Aces';
-		FIVECARDPOKER_ROYAL_FLUSH:
-			ResultStr := 'Royal Flush!';
-	END_CASE;
+	Result2String(gPlayer.Result, ResultStr);
 	
 	
 	CASE gCurrentGame OF
@@ -113,6 +87,13 @@ PROGRAM _CYCLIC
 	
 	EnableBetting := NOT gPlayer.ActiveRound; //Betting should only be enabled when the round is not active
 	NotLoggedIn := NOT gPlayer.LoggedIn;
+	
+	FOR i := 0 TO 13 DO
+		Result2String(gPayTable.Hands[i], PayTableStr[i]);
+		PayTableScaledWinnings[i] := gPayTable.WinningsScalarArr[i] * gPlayer.ChosenBet;
+		PayTableVisible[i] := gPayTable.WinningsScalarArr[i] <> 0;
+	END_FOR
+	
 			
 	
 END_PROGRAM

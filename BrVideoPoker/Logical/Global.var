@@ -7,5 +7,6 @@ END_VAR
 VAR
 	gCurrentGame : GameVariant_enum;
 	gCommand : Command_typ;
+	gPayTable : PayTable_typ;
 	gDeck : DeckFB;
 END_VAR

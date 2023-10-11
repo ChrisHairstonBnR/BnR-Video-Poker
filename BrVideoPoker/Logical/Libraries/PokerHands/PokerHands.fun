@@ -30,3 +30,12 @@ END_FUNCTION
 		i : USINT;
 	END_VAR
 END_FUNCTION
+
+FUNCTION Result2String : BOOL
+	VAR_INPUT
+		ResultHand : FiveCardPoker_enum;
+	END_VAR
+	VAR_IN_OUT
+		destString : STRING[80];
+	END_VAR
+END_FUNCTION

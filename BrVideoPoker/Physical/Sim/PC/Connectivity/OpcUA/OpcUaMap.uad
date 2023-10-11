@@ -23,6 +23,9 @@
         <Variable Name="gCommand" AutomaticEnable="True">
           <Variable Name="CMD_Action" />
         </Variable>
+        <Variable Name="gPayTable" AutomaticEnable="True">
+          <Variable Name="WinningsScalarArr" EnableArrayElements="True" />
+        </Variable>
       </GlobalVariables>
       <Task Name="GameCode">
         <Variable Name="GameState" />
@@ -38,6 +41,9 @@
         <Variable Name="ResultStr" />
         <Variable Name="GameStr" />
         <Variable Name="NotLoggedIn" />
+        <Variable Name="PayTableStr" EnableArrayElements="True" />
+        <Variable Name="PayTableVisible" EnableArrayElements="True" />
+        <Variable Name="PayTableScaledWinnings" EnableArrayElements="True" />
       </Task>
     </Module>
   </DefaultView>

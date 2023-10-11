@@ -9,6 +9,28 @@ PROGRAM _CYCLIC
 	//gPlayer.Hand := TestHand;
 	//Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
 	
+	//Choose pay table based on game
+	CASE gCurrentGame OF
+		GAME_NONE:
+					
+		GAME_BONUS_POKER:
+					
+		GAME_DOUBLE_BONUS_POKER:
+					
+		GAME_TRIPLE_BONUS_POKER:
+					
+		GAME_ULTRA_BONUS_POKER:
+				
+		GAME_ALL_AMERICAN:
+				
+		GAME_JACKS_OR_BETTER:
+			gPayTable := PAY_TABLE_JACKS_OR_BETTER;
+		GAME_ACES_AND_EIGHTS:
+				
+		GAME_ACES_AND_FACES:
+				
+	END_CASE
+	
 	
 	CASE GameState OF
 		GAME_STATE_WAIT:
@@ -64,29 +86,9 @@ PROGRAM _CYCLIC
 		GAME_STATE_RESULTS:
 			gPlayer.Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
 			ActionButtonStr := 'Clear';
-			//Choose pay table based on game
-			CASE gCurrentGame OF
-				GAME_NONE:
-					
-				GAME_BONUS_POKER:
-					
-				GAME_DOUBLE_BONUS_POKER:
-					
-				GAME_TRIPLE_BONUS_POKER:
-					
-				GAME_ULTRA_BONUS_POKER:
-				
-				GAME_ALL_AMERICAN:
-				
-				GAME_JACKS_OR_BETTER:
-					PayTable := PAY_TABLE_JACKS_OR_BETTER;
-				GAME_ACES_AND_EIGHTS:
-				
-				GAME_ACES_AND_FACES:
-				
-			END_CASE
 			
-			gPlayer.Winnings := CalculateWinnings(gPlayer.Result, gPlayer.ChosenBet, PayTable);
+			
+			gPlayer.Winnings := CalculateWinnings(gPlayer.Result, gPlayer.ChosenBet, gPayTable);
 			
 			IF R_TRIG_ResultState.Q THEN
 				gPlayer.Balance := gPlayer.Balance + gPlayer.Winnings;

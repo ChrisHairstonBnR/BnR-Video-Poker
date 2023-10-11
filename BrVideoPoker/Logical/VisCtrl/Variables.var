@@ -6,4 +6,7 @@ VAR
 	EnableBetting : BOOL;
 	GameStr : STRING[80];
 	NotLoggedIn : BOOL;
+	PayTableStr : ARRAY[0..13] OF STRING[80];
+	PayTableScaledWinnings : ARRAY[0..13] OF REAL;
+	PayTableVisible : ARRAY[0..13] OF BOOL;
 END_VAR

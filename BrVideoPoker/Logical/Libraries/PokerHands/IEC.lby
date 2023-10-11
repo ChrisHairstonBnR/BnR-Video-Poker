@@ -7,5 +7,6 @@
     <File Description="Exported functions and function blocks">PokerHands.fun</File>
     <File>CalculateWinnings.st</File>
     <File>HandResult.st</File>
+    <File>Result2String.st</File>
   </Files>
 </Library>

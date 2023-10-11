@@ -13,5 +13,233 @@
 <Source xsi:type="opcUa" refId="::VisCtrl:EnableBetting" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NavigationButtonHome" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable0" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable3" attribute="value" />
+</Binding>
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable0" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[9]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[8]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[7]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[6]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[10]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable10" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[11]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable11" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[12]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable12" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableStr[13]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable13" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[11]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable11" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[10]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable10" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[9]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[8]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[7]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[6]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[12]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable12" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableScaledWinnings[13]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable13" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable0" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable0" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable5" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable5" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[6]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable6" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[6]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable6" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[7]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable7" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[7]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable7" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[8]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable8" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[8]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable8" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[9]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable9" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[9]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable9" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[10]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable10" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[10]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable10" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[11]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable11" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[11]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable11" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[12]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable12" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[12]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable12" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[13]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="TextOutput_PayTable13" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[13]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable13" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>
