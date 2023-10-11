@@ -89,6 +89,7 @@ PROGRAM _CYCLIC
 			ResultStr := 'Royal Flush!';
 	END_CASE;
 	
+	EnableBetting := NOT gPlayer.ActiveRound; //Betting should only be enabled when the round is not active
 			
 	
 END_PROGRAM

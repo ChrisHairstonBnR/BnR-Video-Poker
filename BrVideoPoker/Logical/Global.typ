@@ -10,6 +10,7 @@ TYPE
 		Result : FiveCardPoker_enum;
 	END_STRUCT;
 	Command_typ : 	STRUCT 
+		CMD_Confirm : BOOL;
 		CMD_Action : BOOL;
 	END_STRUCT;
 END_TYPE

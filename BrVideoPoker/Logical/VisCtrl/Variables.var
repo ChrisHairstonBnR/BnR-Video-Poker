@@ -3,4 +3,5 @@ VAR
 	BetIndex : USINT;
 	i : USINT;
 	ResultStr : STRING[80];
+	EnableBetting : BOOL;
 END_VAR

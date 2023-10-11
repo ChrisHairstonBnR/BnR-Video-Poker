@@ -68,5 +68,9 @@
 <Source xsi:type="opcUa" refId="::VisCtrl:CardStr[4]" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card5" attribute="image" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:EnableBetting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="FlyOut_Bet" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>

@@ -17,18 +17,23 @@
           <Variable Name="HoldArr" EnableArrayElements="True" />
           <Variable Name="ChosenBet" />
           <Variable Name="Winnings" />
+          <Variable Name="Result" />
         </Variable>
-        <Variable Name="gCommand">
+        <Variable Name="gCommand" AutomaticEnable="True">
           <Variable Name="CMD_Action" />
         </Variable>
       </GlobalVariables>
-      <Task Name="GameCode" />
+      <Task Name="GameCode">
+        <Variable Name="GameState" />
+      </Task>
       <Task Name="UserSys">
         <Variable Name="CurrentUser" />
       </Task>
       <Task Name="VisCtrl">
         <Variable Name="BetIndex" />
         <Variable Name="CardStr" EnableArrayElements="True" />
+        <Variable Name="EnableBetting" />
+        <Variable Name="ResultStr" />
       </Task>
     </Module>
   </DefaultView>

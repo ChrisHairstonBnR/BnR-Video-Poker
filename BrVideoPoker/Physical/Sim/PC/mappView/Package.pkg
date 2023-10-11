@@ -9,5 +9,7 @@
     <Object Type="File">ContentUser.eventbinding</Object>
     <Object Type="File">ContentTop.eventbinding</Object>
     <Object Type="File">ContentHome.eventbinding</Object>
+    <Object Type="File">ContentResult.binding</Object>
+    <Object Type="File">ContentResult.eventbinding</Object>
   </Objects>
 </Package>

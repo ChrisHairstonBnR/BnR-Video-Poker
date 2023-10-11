@@ -60,10 +60,12 @@ PROGRAM _CYCLIC
 		GAME_STATE_RESULTS:
 			gPlayer.Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
 			
-			IF gCommand.CMD_Action THEN
+			IF gCommand.CMD_Confirm OR gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
+				gCommand.CMD_Confirm := FALSE;
 				GameState := GAME_STATE_WAIT;
 			END_IF	
+			
 		GAME_STATE_ERROR:
 		
 	END_CASE
