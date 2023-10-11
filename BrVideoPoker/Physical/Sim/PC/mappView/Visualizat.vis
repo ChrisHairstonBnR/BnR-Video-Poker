@@ -32,7 +32,8 @@
   <VariablesSets />
   <ExpressionsSets />
   <Configurations>
-    <Configuration key="activityCount" value="false" />
+		<Configuration key="activityCount" value="false" />
+		<Configuration key="zoom" value="true" />
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />
 		  <SystemGesture2 touchPoints="2" />

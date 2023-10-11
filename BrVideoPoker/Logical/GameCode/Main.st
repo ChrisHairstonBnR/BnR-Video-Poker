@@ -64,7 +64,9 @@ PROGRAM _CYCLIC
 		GAME_STATE_HOLD:
 			//Wait for user to select cards to hold
 			ActionButtonStr := 'Continue';
-			IF gCommand.CMD_Action THEN
+			IF NOT gPlayer.LoggedIn THEN
+				GameState := GAME_STATE_WAIT;
+			ELSIF gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
 				GameState := GAME_STATE_REDEAL;
 			END_IF	
@@ -94,7 +96,9 @@ PROGRAM _CYCLIC
 				gPlayer.Balance := gPlayer.Balance + gPlayer.Winnings;
 			END_IF
 			
-			IF gCommand.CMD_Confirm OR gCommand.CMD_Action THEN
+			IF NOT gPlayer.LoggedIn THEN
+				GameState := GAME_STATE_WAIT;
+			ELSIF gCommand.CMD_Confirm OR gCommand.CMD_Action THEN
 				gCommand.CMD_Action := FALSE;
 				gCommand.CMD_Confirm := FALSE;
 				GameState := GAME_STATE_WAIT;

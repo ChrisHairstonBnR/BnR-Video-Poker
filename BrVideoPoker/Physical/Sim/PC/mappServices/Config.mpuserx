@@ -3,6 +3,7 @@
 <Configuration>
   <Element ID="UserMgmtX" Type="mpuserx">
     <Group ID="Mgr">
+      <Property ID="AutoLogoutTime" Value="300" />
       <Property ID="UserNameLength" Value="3" />
       <Property ID="LoginAttempts" Value="5" />
     </Group>
