@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ddef:Dialog xmlns:ddef="http://www.br-automation.com/iat2015/dialogDefinition/v2" id="DialogResult" layoutRefId="LayoutResult" headerHeight="0px" backColor="rgba(255, 255, 255, 1)" borderColor="rgba(255, 255, 0, 1)" opacity="0.85" showCloseButton="false">
+<ddef:Dialog xmlns:ddef="http://www.br-automation.com/iat2015/dialogDefinition/v2" id="DialogResult" layoutRefId="LayoutResult" headerHeight="0px" backColor="rgba(255, 255, 255, 1)" borderColor="rgba(255, 255, 0, 1)" opacity="0.8" showCloseButton="false">
   <Assignments>
     <Assignment type="Content" baseContentRefId="ContentResult" areaRefId="AreaMain" backColor="rgba(0, 0, 0, 1)" />
   </Assignments>
