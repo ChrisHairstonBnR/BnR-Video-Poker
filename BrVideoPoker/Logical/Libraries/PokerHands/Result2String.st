@@ -5,6 +5,8 @@ FUNCTION Result2String
 			destString := '';
 		FIVECARDPOKER_PAIR_FACE:
 			destString := 'Jacks or Better';
+		FIVECARDPOKER_KINGS_OR_BETTER:
+			destString := 'Kings or Better';
 		FIVECARDPOKER_TWO_PAIR:
 			destString := 'Two Pair';
 		FIVECARDPOKER_THREE_OF_A_KIND:

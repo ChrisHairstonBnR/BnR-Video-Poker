@@ -86,7 +86,7 @@ PROGRAM _CYCLIC
 			GameState := GAME_STATE_RESULTS;
 			
 		GAME_STATE_RESULTS:
-			gPlayer.Result := HandResult(gPlayer.Hand, GAME_JACKS_OR_BETTER);
+			gPlayer.Result := HandResult(gPlayer.Hand, gCurrentGame);
 			ActionButtonStr := 'Clear';
 			
 			
