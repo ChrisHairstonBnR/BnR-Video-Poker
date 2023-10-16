@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="Package">Cards</Object>
     <Object Type="Package">SymbolLib</Object>
+    <Object Type="File">Information_icon.svg</Object>
   </Objects>
 </Package>

@@ -241,5 +241,9 @@
 <Source xsi:type="opcUa" refId="::VisCtrl:PayTableVisible[13]" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="NumericOutput_PayTable13" attribute="visible" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.ActiveRound" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentTop" widgetRefId="GroupBox_Info" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>

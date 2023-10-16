@@ -11,7 +11,7 @@
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
         <Variable Name="gCurrentGame" />
-        <Variable Name="gPlayer">
+        <Variable Name="gPlayer" AutomaticEnable="True">
           <Variable Name="Balance" />
           <Variable Name="Hand" EnableArrayElements="True" />
           <Variable Name="HoldArr" EnableArrayElements="True" />
