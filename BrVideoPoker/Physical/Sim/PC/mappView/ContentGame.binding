@@ -89,5 +89,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.LoggedIn" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="FlyOut_Bet" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.Winnings" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Win" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
