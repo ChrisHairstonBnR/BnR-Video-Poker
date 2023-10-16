@@ -5,5 +5,6 @@
     <Object Type="Package">Cards</Object>
     <Object Type="Package">SymbolLib</Object>
     <Object Type="File">Information_icon.svg</Object>
+    <Object Type="File">Casino_Chip.svg</Object>
   </Objects>
 </Package>

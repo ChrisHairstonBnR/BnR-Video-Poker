@@ -85,5 +85,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.ChosenBet" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_BetChoice" attribute="node" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.LoggedIn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="FlyOut_Bet" attribute="enable" />
+</Binding>
 </Bindings>
 </BindingsSet>

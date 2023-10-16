@@ -47,7 +47,7 @@ TYPE
 		Royal : BOOL;
 	END_STRUCT;
 	PayTable_typ : 	STRUCT 
-		Hands : ARRAY[0..13]OF FiveCardPoker_enum := [FIVECARDPOKER_NOTHING,13(0)];
+		Hands : ARRAY[0..13]OF FiveCardPoker_enum;
 		WinningsScalarArr : ARRAY[0..13]OF REAL; (*Amount to multiply bet for winnings if that hand is achieved.*)
 		GameVariant : GameVariant_enum;
 	END_STRUCT;

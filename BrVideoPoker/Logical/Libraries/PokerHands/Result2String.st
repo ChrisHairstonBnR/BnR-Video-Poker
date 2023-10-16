@@ -4,7 +4,7 @@ FUNCTION Result2String
 		FIVECARDPOKER_NOTHING:
 			destString := '';
 		FIVECARDPOKER_PAIR_FACE:
-			destString := 'Pair';
+			destString := 'Jacks or Better';
 		FIVECARDPOKER_TWO_PAIR:
 			destString := 'Two Pair';
 		FIVECARDPOKER_THREE_OF_A_KIND:
@@ -19,6 +19,10 @@ FUNCTION Result2String
 			destString := 'Straight Flush';
 		FIVECARDPOKER_FOUR_ANY:
 			destString := 'Four of a Kind';
+		FIVECARDPOKER_FOUR_234:
+			destString := 'Four 2s, 3s, 4s';
+		FIVECARDPOKER_FOUR_FIVE_THRU_K:
+			destString := 'Four 5s Thru Ks';
 		FIVECARDPOKER_FOUR_EIGHTS:
 			destString := 'Four Eights';
 		FIVECARDPOKER_FOUR_JQK:
