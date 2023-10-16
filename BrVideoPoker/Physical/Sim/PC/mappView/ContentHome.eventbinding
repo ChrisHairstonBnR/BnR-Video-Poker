@@ -85,5 +85,47 @@
         </Sequence>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="ContentHome.Button_GameChoice4.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice4" event="Click" />
+      <EventHandler>
+        <Sequence>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="4" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentHome.Button_GameChoice5.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice5" event="Click" />
+      <EventHandler>
+        <Sequence>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="5" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>
