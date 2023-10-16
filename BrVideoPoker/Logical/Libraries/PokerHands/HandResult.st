@@ -69,9 +69,14 @@ FUNCTION HandResult
 		ELSIF ColumnTotals[k] = 2 THEN
 			PairCount := PairCount + 1;
 			ResultBools.AnyPair := TRUE;
-			IF k > 10 AND k <= 14 THEN
+			IF k >= 11 AND k <= 14 THEN
 				ResultBools.FacePair := TRUE;
 			END_IF	
+			
+			IF k >= 12 AND k <= 14 THEN
+				ResultBools.KingsOrBetter := TRUE;
+			END_IF
+			
 		END_IF
 		
 		IF k >= 2 AND k<=9 AND ColumnTotals[k] > 0 THEN
