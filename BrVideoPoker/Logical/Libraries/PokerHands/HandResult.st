@@ -47,6 +47,10 @@ FUNCTION HandResult
 				ResultBools.FourEights := TRUE;
 			END_IF;
 			
+			IF k = 7 THEN
+				ResultBools.FourSevens := TRUE;
+			END_IF;
+			
 			IF k > 10 AND k < 14 THEN
 				ResultBools.FourJQK := TRUE;
 			END_IF
