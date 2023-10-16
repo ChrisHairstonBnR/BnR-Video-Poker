@@ -41,14 +41,26 @@ FUNCTION HandResult
 	
 	FOR k := 1 TO 14 DO //iterate through column totals
 		IF ColumnTotals[k] = 4 THEN
+			ResultBools.FourAny := TRUE;
+			
 			IF k = 8 THEN
 				ResultBools.FourEights := TRUE;
-			ELSIF k > 10 AND k < 14 THEN
+			END_IF;
+			
+			IF k > 10 AND k < 14 THEN
 				ResultBools.FourJQK := TRUE;
-			ELSIF k = 1 OR k = 14 THEN
+			END_IF
+			
+			IF k = 1 OR k = 14 THEN
 				ResultBools.FourAces := TRUE;
-			ELSE
-				ResultBools.FourAny := TRUE;
+			END_IF
+			
+			IF k >= 2 AND k <= 4 THEN
+				ResultBools.Four234 := TRUE;
+			END_IF
+			
+			IF k >=5 AND k <= 13 THEN
+				ResultBools.FourFiveThruKing := TRUE;
 			END_IF
 			
 		ELSIF ColumnTotals[k] = 3 THEN
