@@ -11,8 +11,8 @@
         <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice4" top="0" left="0" width="350" height="80" zIndex="3" multiLine="true" text="Ultra Bonus Poker" wordWrap="true" fontSize="35px" bold="true" margin="15px" />
         <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice5" top="0" left="0" width="350" height="80" zIndex="4" multiLine="true" text="All American" wordWrap="true" fontSize="45px" bold="true" margin="15px" />
         <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice6" top="0" left="0" width="350" height="80" zIndex="5" multiLine="true" text="Jacks or Better" wordWrap="true" fontSize="45px" bold="true" margin="15px" />
-        <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice7" top="0" left="0" width="350" height="80" zIndex="6" multiLine="true" text="Aces &amp; Eights" wordWrap="true" fontSize="45px" bold="true" margin="15px" enable="false" />
-        <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice8" top="0" left="0" width="350" height="80" zIndex="7" multiLine="true" text="Aces &amp; Faces" wordWrap="true" fontSize="45px" bold="true" margin="15px" enable="false" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice7" top="0" left="0" width="350" height="80" zIndex="6" multiLine="true" text="Aces &amp; Eights" wordWrap="true" fontSize="45px" bold="true" margin="15px" />
+        <Widget xsi:type="widgets.brease.Button" id="Button_GameChoice8" top="0" left="0" width="350" height="80" zIndex="7" multiLine="true" text="Aces &amp; Faces" wordWrap="true" fontSize="45px" bold="true" margin="15px" />
       </Widgets>
     </Widget>
   </Widgets>

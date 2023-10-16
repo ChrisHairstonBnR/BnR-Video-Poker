@@ -114,8 +114,8 @@ FUNCTION HandResult
 				HandResult := FIVECARDPOKER_FOUR_ACES;
 			ELSIF ResultBools.Four234 THEN
 				HandResult := FIVECARDPOKER_FOUR_234;
-			ELSIF ResultBools.FourFiveThruKing THEN
-				HandResult := FIVECARDPOKER_FOUR_FIVE_THRU_K;
+			ELSIF ResultBools.FourAny THEN
+				HandResult := FIVECARDPOKER_FOUR_ANY;
 			ELSIF ResultBools.ThreeOfAKind AND ResultBools.AnyPair THEN
 				HandResult := FIVECARDPOKER_FULL_HOUSE;
 			ELSIF ResultBools.Flush THEN
@@ -142,8 +142,8 @@ FUNCTION HandResult
 				HandResult := FIVECARDPOKER_FOUR_ACES;
 			ELSIF ResultBools.Four234 THEN
 				HandResult := FIVECARDPOKER_FOUR_234;
-			ELSIF ResultBools.FourFiveThruKing THEN
-				HandResult := FIVECARDPOKER_FOUR_FIVE_THRU_K;
+			ELSIF ResultBools.FourAny THEN
+				HandResult := FIVECARDPOKER_FOUR_ANY;
 			ELSIF ResultBools.ThreeOfAKind AND ResultBools.AnyPair THEN
 				HandResult := FIVECARDPOKER_FULL_HOUSE;
 			ELSIF ResultBools.Flush THEN
@@ -170,8 +170,8 @@ FUNCTION HandResult
 				HandResult := FIVECARDPOKER_FOUR_ACES;
 			ELSIF ResultBools.Four234 THEN
 				HandResult := FIVECARDPOKER_FOUR_234;
-			ELSIF ResultBools.FourFiveThruKing THEN
-				HandResult := FIVECARDPOKER_FOUR_FIVE_THRU_K;
+			ELSIF ResultBools.FourAny THEN
+				HandResult := FIVECARDPOKER_FOUR_ANY;
 			ELSIF ResultBools.ThreeOfAKind AND ResultBools.AnyPair THEN
 				HandResult := FIVECARDPOKER_FULL_HOUSE;
 			ELSIF ResultBools.Flush THEN
@@ -197,8 +197,8 @@ FUNCTION HandResult
 				HandResult := FIVECARDPOKER_FOUR_ACES;
 			ELSIF ResultBools.Four234 THEN
 				HandResult := FIVECARDPOKER_FOUR_234;
-			ELSIF ResultBools.FourFiveThruKing THEN
-				HandResult := FIVECARDPOKER_FOUR_FIVE_THRU_K;
+			ELSIF ResultBools.FourAny THEN
+				HandResult := FIVECARDPOKER_FOUR_ANY;
 			ELSIF ResultBools.ThreeOfAKind AND ResultBools.AnyPair THEN
 				HandResult := FIVECARDPOKER_FULL_HOUSE;
 			ELSIF ResultBools.Flush THEN
@@ -263,9 +263,62 @@ FUNCTION HandResult
 			
 
 		GAME_ACES_AND_EIGHTS:
+			//Large if statement based on hand result checks
+			IF ResultBools.Royal AND ResultBools.Flush THEN
+				HandResult := FIVECARDPOKER_ROYAL_FLUSH;
+			ELSIF ResultBools.Straight AND ResultBools.Flush THEN
+				HandResult := FIVECARDPOKER_STRAIGHT_FLUSH;
+			ELSIF ResultBools.FourAces THEN
+				HandResult := FIVECARDPOKER_FOUR_ACES;
+			ELSIF ResultBools.FourEights THEN
+				HandResult := FIVECARDPOKER_FOUR_EIGHTS;
+			ELSIF ResultBools.FourEights THEN
+				HandResult := FIVECARDPOKER_FOUR_SEVENS;
+			ELSIF ResultBools.FourAny THEN
+				HandResult := FIVECARDPOKER_FOUR_ANY;
+			ELSIF ResultBools.ThreeOfAKind AND ResultBools.AnyPair THEN
+				HandResult := FIVECARDPOKER_FULL_HOUSE;
+			ELSIF ResultBools.Flush THEN
+				HandResult := FIVECARDPOKER_FLUSH;
+			ELSIF ResultBools.Straight THEN
+				HandResult := FIVECARDPOKER_STRAIGHT;
+			ELSIF ResultBools.ThreeOfAKind THEN
+				HandResult := FIVECARDPOKER_THREE_OF_A_KIND;
+			ELSIF ResultBools.TwoPair THEN
+				HandResult := FIVECARDPOKER_TWO_PAIR;
+			ELSIF ResultBools.FacePair THEN
+				HandResult := FIVECARDPOKER_PAIR_FACE;
+			ELSE
+				HandResult := FIVECARDPOKER_NOTHING;
+			END_IF
 			
 		GAME_ACES_AND_FACES:
-	
+			//Large if statement based on hand result checks
+			IF ResultBools.Royal AND ResultBools.Flush THEN
+				HandResult := FIVECARDPOKER_ROYAL_FLUSH;
+			ELSIF ResultBools.Straight AND ResultBools.Flush THEN
+				HandResult := FIVECARDPOKER_STRAIGHT_FLUSH;
+			ELSIF ResultBools.FourAces THEN
+				HandResult := FIVECARDPOKER_FOUR_ACES;
+			ELSIF ResultBools.FourJQK THEN
+				HandResult := FIVECARDPOKER_FOUR_JQK;
+			ELSIF ResultBools.FourAny THEN
+				HandResult := FIVECARDPOKER_FOUR_ANY;
+			ELSIF ResultBools.ThreeOfAKind AND ResultBools.AnyPair THEN
+				HandResult := FIVECARDPOKER_FULL_HOUSE;
+			ELSIF ResultBools.Flush THEN
+				HandResult := FIVECARDPOKER_FLUSH;
+			ELSIF ResultBools.Straight THEN
+				HandResult := FIVECARDPOKER_STRAIGHT;
+			ELSIF ResultBools.ThreeOfAKind THEN
+				HandResult := FIVECARDPOKER_THREE_OF_A_KIND;
+			ELSIF ResultBools.TwoPair THEN
+				HandResult := FIVECARDPOKER_TWO_PAIR;
+			ELSIF ResultBools.FacePair THEN
+				HandResult := FIVECARDPOKER_PAIR_FACE;
+			ELSE
+				HandResult := FIVECARDPOKER_NOTHING;
+			END_IF
 	
 	END_CASE
 END_FUNCTION

@@ -25,6 +25,8 @@ FUNCTION Result2String
 			destString := 'Four 2s, 3s, 4s';
 		FIVECARDPOKER_FOUR_FIVE_THRU_K:
 			destString := 'Four 5s Thru Ks';
+		FIVECARDPOKER_FOUR_SEVENS:
+			destString := 'Four Sevens';
 		FIVECARDPOKER_FOUR_EIGHTS:
 			destString := 'Four Eights';
 		FIVECARDPOKER_FOUR_JQK:
