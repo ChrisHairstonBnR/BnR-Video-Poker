@@ -16,7 +16,7 @@ PROGRAM _CYCLIC
 		GAME_BONUS_POKER:
 			gPayTable := PAY_TABLE_BONUS_POKER;
 		GAME_DOUBLE_BONUS_POKER:
-					
+			gPayTable := PAY_TABLE_DOUBLE_BONUS_POKER;
 		GAME_TRIPLE_BONUS_POKER:
 					
 		GAME_ULTRA_BONUS_POKER:
@@ -63,7 +63,7 @@ PROGRAM _CYCLIC
 		
 		GAME_STATE_HOLD:
 			//Wait for user to select cards to hold
-			ActionButtonStr := 'Continue';
+			ActionButtonStr := 'Draw';
 			IF NOT gPlayer.LoggedIn THEN
 				GameState := GAME_STATE_WAIT;
 			ELSIF gCommand.CMD_Action THEN
