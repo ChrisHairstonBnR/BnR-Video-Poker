@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="ContentGame_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.HoldArr[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.HoldArr[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.HoldArr[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.HoldArr[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.HoldArr[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_Hold5" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.ChosenBet" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Bet" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.Balance" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Balance" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card3" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card2" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card1" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card4" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:CardStr[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Image_Card5" attribute="image" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:EnableBetting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="FlyOut_Bet" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.LoggedIn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Button_Action" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:NotLoggedIn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Label_NotLoggedIn" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::GameCode:ActionButtonStr" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="Button_Action" attribute="text" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.ChosenBet" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_BetChoice" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.LoggedIn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="FlyOut_Bet" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPlayer.Winnings" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentGame" widgetRefId="NumericOutput_Win" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

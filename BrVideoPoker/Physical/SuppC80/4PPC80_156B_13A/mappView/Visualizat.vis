@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vdef:Visualization id="PokerVis" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+  <StartPage pageRefId="HomePage" />
+  <Pages>
+    <Page refId="GameplayPage" />
+    <Page refId="HomePage" />
+  </Pages>
+  <Navigations />
+  <BindingsSets>
+    <BindingsSet refId="ContentGame_binding" />
+    <BindingsSet refId="ContentResult_binding" />
+    <BindingsSet refId="ContentTop_binding" />
+  </BindingsSets>
+  <EventBindingsSets>
+    <EventBindingsSet refId="ContentGame_eventbinding" />
+    <EventBindingsSet refId="ContentUser_eventbinding" />
+    <EventBindingsSet refId="ContentTop_eventbinding" />
+    <EventBindingsSet refId="ContentHome_eventbinding" />
+    <EventBindingsSet refId="ContentResult_eventbinding" />
+  </EventBindingsSets>
+  <Dialogs>
+    <Dialog refId="DialogUser" />
+    <Dialog refId="DialogResult" />
+  </Dialogs>
+  <Contents>
+    <Content refId="ContentTop" />
+    <Content refId="ContentUser" />
+    <Content refId="ContentHome" />
+    <Content refId="ContentResult" />
+  </Contents>
+  <SnippetsSets />
+  <VariablesSets />
+  <ExpressionsSets />
+  <Configurations>
+		<Configuration key="activityCount" value="false" />
+		<Configuration key="zoom" value="true" />
+    <Gestures>
+      <!--<SystemGesture1 touchPoints="2" />
+		  <SystemGesture2 touchPoints="2" />
+		  <SystemGesture3 touchPoints="2" />-->
+    </Gestures>
+    <VirtualKeyboards>
+      <!--<InputProcessing onKeyDown="true" />-->
+    </VirtualKeyboards>
+  </Configurations>
+</vdef:Visualization>
