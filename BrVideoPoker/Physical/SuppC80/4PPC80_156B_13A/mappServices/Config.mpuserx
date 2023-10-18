@@ -23,9 +23,6 @@
       <Group ID="DefUser#2">
         <Property ID="id" Value="Anonymous" />
       </Group>
-      <Group ID="DefUser#3">
-        <Property ID="id" Value="CreateUser" />
-      </Group>
     </Group>
     <Group ID="Groups">
       <Group ID="DefGroup#1">

@@ -4,22 +4,21 @@
     <EventBinding id="ContentCreateUser.Button_Confirm.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentCreateUser" widgetRefId="Button_Confirm" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::UserSys:CMD_CreateUser">
-                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="DialogCreateUser" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::UserSys:CMD_CreateUser">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_5">
+      <Source xsi:type="opcUa.Event" refId="::UserSys:CMD_UserCreationDone" event="ValueChanged" />
+      <EventHandler condition="newValue = TRUE">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="DialogCreateUser" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
   </Bindings>

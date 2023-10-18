@@ -66,9 +66,10 @@ PROGRAM _CYCLIC
 	
 	CASE CreateUserState OF
 		CREATE_USER_WAIT:
-			
+			//CMD_UserCreationDone := FALSE;
 			IF CMD_CreateUser THEN
-				CreateUserState := CREATE_USER_CREATE;		
+				CreateUserState := CREATE_USER_CREATE;
+				CMD_UserCreationDone := FALSE;
 			END_IF
 		CREATE_USER_CREATE:
 			ArUserCreate_FB.Execute := TRUE;
@@ -84,6 +85,7 @@ PROGRAM _CYCLIC
 			ELSIF ArUserCreate_FB.Error THEN
 				ArUserCreate_FB.Execute := FALSE;
 				ArUserCreate_FB.UserName := '';
+				ErrorCode := ArUserCreate_FB.ErrorID;
 				CreateUserState := CREATE_USER_ERROR;
 			END_IF
 		CREATE_USER_SET_PASSWORD:
@@ -99,6 +101,8 @@ PROGRAM _CYCLIC
 				ArUserSetPassword_FB.UserName := '';
 				ArUserSetPassword_FB.Password := '';
 				CMD_CreateUser := FALSE;
+				ErrorCode := ArUserSetPassword_FB.ErrorID;
+				CMD_UserCreationDone := TRUE;
 				CreateUserState := CREATE_USER_WAIT;
 			ELSIF ArUserSetPassword_FB.Error THEN
 				ArUserSetPassword_FB.Execute := FALSE;
@@ -109,6 +113,18 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		CREATE_USER_ERROR:
+			CASE ErrorCode OF
+				arUSER_ERR_PARAMETER:
+					ErrorStr := 'The function block was called with an invalid parameter.'; //Should not occur unless programmer has messed up
+				arUSER_ERR_ALREADY_EXISTS:
+					ErrorStr := 'The user already exists.';
+				arUSER_ERR_DOES_NOT_EXIST:
+					ErrorStr := 'The user does not exist.';
+				arUSER_ERR_INTERNAL:
+					ErrorStr :='An unexpected internal error has occurred.';
+				ELSE
+					ErrorStr := '';
+			END_CASE
 		
 	END_CASE
 	
@@ -121,7 +137,7 @@ PROGRAM _CYCLIC
 	
 	//MpUserXManagerUI for monitoring (requres mpuserxlogin)
 	MpUserXLogin_FB(MpLink :=  ADR(gUserXLogin), Enable := TRUE);
-	MpUserXManagerUI_FB(MpLink := ADR(gUserXLogin), Enable := TRUE, UISetup := MpUserXManagerUI_Setup, UIConnect := ADR(MpUserXManagerUI_Connect) );
+	MpUserXManagerUI_FB(MpLink := ADR(gUserXLogin), Enable := TRUE, UISetup := MpUserXManagerUI_Setup, UIConnect := ADR(MpUserXManagerUI_Connect));
 END_PROGRAM
 
 PROGRAM _EXIT

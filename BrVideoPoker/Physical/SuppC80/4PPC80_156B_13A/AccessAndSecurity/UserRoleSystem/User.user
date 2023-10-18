@@ -14,10 +14,4 @@
       <Property ID="Role[1]" Value="Administrators" />
     </Group>
   </Element>
-  <Element ID="CreateUser" Type="User">
-    <Property ID="UserID" Value="3" />
-    <Group ID="Roles">
-      <Property ID="Role[1]" Value="Administrators" />
-    </Group>
-  </Element>
 </Configuration>

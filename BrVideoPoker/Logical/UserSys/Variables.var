@@ -13,4 +13,7 @@ VAR
 	MpUserXLogin_FB : MpUserXLogin;
 	MpUserXManagerUI_FB : MpUserXManagerUI;
 	CreateUserState : CreateUserState_enum;
+	ErrorCode : DINT;
+	ErrorStr : STRING[80];
+	CMD_UserCreationDone : BOOL;
 END_VAR

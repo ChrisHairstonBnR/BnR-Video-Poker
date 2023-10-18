@@ -36,6 +36,8 @@
         <Variable Name="CreateUserNameStr" />
         <Variable Name="CreateUserPassStr" />
         <Variable Name="CMD_CreateUser" />
+        <Variable Name="ErrorStr" />
+        <Variable Name="CMD_UserCreationDone" />
       </Task>
       <Task Name="VisCtrl">
         <Variable Name="BetIndex" />

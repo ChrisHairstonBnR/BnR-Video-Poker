@@ -9,5 +9,9 @@
 <Source xsi:type="opcUa" refId="::UserSys:CreateUserPassStr" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="Password1" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::UserSys:ErrorStr" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="TextOutput_Error" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
