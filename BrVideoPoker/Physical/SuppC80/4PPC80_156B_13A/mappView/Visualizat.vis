@@ -13,6 +13,7 @@
     <BindingsSet refId="ContentResult_binding" />
     <BindingsSet refId="ContentTop_binding" />
     <BindingsSet refId="ContentCreateUser_binding" />
+    <BindingsSet refId="ContentTop169_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentGame_eventbinding" />
@@ -21,6 +22,7 @@
     <EventBindingsSet refId="ContentResult_eventbinding" />
     <EventBindingsSet refId="ContentCreateUser_eventbinding" />
     <EventBindingsSet refId="ContentHome_eventbinding" />
+    <EventBindingsSet refId="ContentTop169_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="DialogUser" />
