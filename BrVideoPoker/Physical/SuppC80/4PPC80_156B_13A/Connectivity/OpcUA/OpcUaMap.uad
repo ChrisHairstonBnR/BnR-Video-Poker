@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
-<OpcUaSource FileVersion="8" ArVersion="D4.92">
+<OpcUaSource FileVersion="8" ArVersion="E4.92">
   <Aliases>
     <ACLAliases />
     <EURangeViolationAliases />
@@ -33,6 +33,9 @@
       </Task>
       <Task Name="UserSys">
         <Variable Name="CurrentUser" />
+        <Variable Name="CreateUserNameStr" />
+        <Variable Name="CreateUserPassStr" />
+        <Variable Name="CMD_CreateUser" />
       </Task>
       <Task Name="VisCtrl">
         <Variable Name="BetIndex" />

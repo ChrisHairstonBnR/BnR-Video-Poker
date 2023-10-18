@@ -21,12 +21,22 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_2">
+    <EventBinding id="EventBinding_2" deactivated="true">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentUser" widgetRefId="Button_AddUser" event="Click" />
       <EventHandler>
         <Action>
           <Target xsi:type="widgets.brease.UserList.Action" contentRefId="ContentUser" widgetRefId="UserList1">
             <Method xsi:type="widgets.brease.UserList.Action.OpenAddUserDialog" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_4">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentUser" widgetRefId="Button_AddUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="DialogCreateUser" />
           </Target>
         </Action>
       </EventHandler>

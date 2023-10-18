@@ -4,12 +4,18 @@
   <Element ID="Anonymous" Type="User">
     <Property ID="UserID" Value="1" />
     <Group ID="Roles">
-      <Property ID="Role[1]" Value="Everyone" />
+      <Property ID="Role[1]" Value="Administrators" />
     </Group>
   </Element>
   <Element ID="Tester" Type="User">
     <Property ID="UserID" Value="2" />
     <Property ID="Password" Value="JvQQNfUJ6WfLqHM2tKBh9yq3G0O7/EPNrUTZGQaDx2eQZ4u6Tmg=" Description="&quot;password&quot;" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+    </Group>
+  </Element>
+  <Element ID="CreateUser" Type="User">
+    <Property ID="UserID" Value="3" />
     <Group ID="Roles">
       <Property ID="Role[1]" Value="Administrators" />
     </Group>

@@ -63,9 +63,65 @@ PROGRAM _CYCLIC
 			
 	END_CASE;
 	
+	
+	CASE CreateUserState OF
+		CREATE_USER_WAIT:
+			
+			IF CMD_CreateUser THEN
+				CreateUserState := CREATE_USER_CREATE;		
+			END_IF
+		CREATE_USER_CREATE:
+			ArUserCreate_FB.Execute := TRUE;
+			ArUserCreate_FB.UserName := CreateUserNameStr;
+			
+			IF ArUserCreate_FB.Busy THEN
+				//do nothing
+			ELSIF ArUserCreate_FB.Done THEN
+				//CMD_CreateUser := FALSE;
+				ArUserCreate_FB.Execute := FALSE;
+				ArUserCreate_FB.UserName := '';
+				CreateUserState := CREATE_USER_SET_PASSWORD;
+			ELSIF ArUserCreate_FB.Error THEN
+				ArUserCreate_FB.Execute := FALSE;
+				ArUserCreate_FB.UserName := '';
+				CreateUserState := CREATE_USER_ERROR;
+			END_IF
+		CREATE_USER_SET_PASSWORD:
+			ArUserSetPassword_FB.Execute := TRUE;
+			ArUserSetPassword_FB.UserName := CreateUserNameStr;
+			ArUserSetPassword_FB.Password := CreateUserPassStr;
+			
+			IF ArUserSetPassword_FB.Busy THEN
+				//do nothing
+			ELSIF ArUserSetPassword_FB.Done THEN
+				//CMD_CreateUser := FALSE;
+				ArUserSetPassword_FB.Execute := FALSE;
+				ArUserSetPassword_FB.UserName := '';
+				ArUserSetPassword_FB.Password := '';
+				CMD_CreateUser := FALSE;
+				CreateUserState := CREATE_USER_WAIT;
+			ELSIF ArUserSetPassword_FB.Error THEN
+				ArUserSetPassword_FB.Execute := FALSE;
+				ArUserSetPassword_FB.UserName := '';
+				ArUserSetPassword_FB.Password := '';
+				CMD_CreateUser := FALSE;
+				CreateUserState := CREATE_USER_ERROR;
+			END_IF
+			
+		CREATE_USER_ERROR:
+		
+	END_CASE
+	
+	
+		
+	ArUserCreate_FB();
+	ArUserSetPassword_FB();
 	ArUserGetProperty_FB();
 	ArUserSetProperty_FB();
 	
+	//MpUserXManagerUI for monitoring (requres mpuserxlogin)
+	MpUserXLogin_FB(MpLink :=  ADR(gUserXLogin), Enable := TRUE);
+	MpUserXManagerUI_FB(MpLink := ADR(gUserXLogin), Enable := TRUE, UISetup := MpUserXManagerUI_Setup, UIConnect := ADR(MpUserXManagerUI_Connect) );
 END_PROGRAM
 
 PROGRAM _EXIT

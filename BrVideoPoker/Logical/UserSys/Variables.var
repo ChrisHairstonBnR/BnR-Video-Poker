@@ -1,6 +1,16 @@
 VAR
+	CMD_CreateUser : BOOL;
 	CurrentUser : STRING[80];
 	ArUserSetProperty_FB : ArUserSetProperty;
+	CreateUserPassStr : STRING[80];
+	CreateUserNameStr : STRING[80];
+	ArUserCreate_FB : ArUserCreate;
+	ArUserSetPassword_FB : ArUserSetPassword;
 	ArUserGetProperty_FB : ArUserGetProperty;
 	UserState : UserState_enum;
+	MpUserXManagerUI_Connect : MpUserXMgrUIConnectType;
+	MpUserXManagerUI_Setup : MpUserXMgrUISetupType;
+	MpUserXLogin_FB : MpUserXLogin;
+	MpUserXManagerUI_FB : MpUserXManagerUI;
+	CreateUserState : CreateUserState_enum;
 END_VAR

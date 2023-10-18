@@ -6,6 +6,7 @@
       <Property ID="AutoLogoutTime" Value="300" />
       <Property ID="UserNameLength" Value="3" />
       <Property ID="LoginAttempts" Value="5" />
+      <Property ID="EditSameLevel" Value="TRUE" />
     </Group>
     <Group ID="ServerSettings">
       <Selector ID="Server">
@@ -14,6 +15,17 @@
           <Property ID="[1]" Value="telephoneNumber" />
         </Group>
       </Selector>
+    </Group>
+    <Group ID="Users">
+      <Group ID="DefUser#1">
+        <Property ID="id" Value="Tester" />
+      </Group>
+      <Group ID="DefUser#2">
+        <Property ID="id" Value="Anonymous" />
+      </Group>
+      <Group ID="DefUser#3">
+        <Property ID="id" Value="CreateUser" />
+      </Group>
     </Group>
     <Group ID="Groups">
       <Group ID="DefGroup#1">
@@ -25,8 +37,10 @@
       </Group>
       <Group ID="DefGroup#2">
         <Property ID="id" Value="Everyone" />
-        <Property ID="level" Value="5" />
-        <Property ID="admin" Value="TRUE" />
+        <Property ID="level" Value="1" />
+        <Group ID="rights">
+          <Property ID="[0]" />
+        </Group>
       </Group>
     </Group>
   </Element>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="ContentCreateUser" height="400" width="600" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Password" id="Password1" top="190" left="220" width="210" zIndex="0" />
+    <Widget xsi:type="widgets.brease.TextInput" id="TextInput_Username" top="130" left="220" width="210" zIndex="1" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_Username" top="130" left="130" zIndex="2" text="Username" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_Password" top="190" left="130" zIndex="3" text="Password" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="Label_SignUp" top="30" left="230" width="120" zIndex="4" text="Sign Up" textAlign="center" fontSize="28px" bold="true" underline="true" />
+    <Widget xsi:type="widgets.brease.Button" id="Button_Confirm" top="270" left="220" width="150" height="60" zIndex="5" text="Confirm" backColor="rgba(224, 224, 224, 1)" textAlign="center" fontSize="18px" bold="true" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput_Error" top="360" left="70" width="460" zIndex="6" textColor="rgba(255, 0, 0, 1)" textAlign="center" italic="true" />
+  </Widgets>
+</Content>

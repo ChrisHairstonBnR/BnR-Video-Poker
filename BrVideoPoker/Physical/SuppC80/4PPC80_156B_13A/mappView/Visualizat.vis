@@ -10,6 +10,7 @@
     <BindingsSet refId="ContentGame_binding" />
     <BindingsSet refId="ContentResult_binding" />
     <BindingsSet refId="ContentTop_binding" />
+    <BindingsSet refId="ContentCreateUser_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentGame_eventbinding" />
@@ -17,23 +18,26 @@
     <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentHome_eventbinding" />
     <EventBindingsSet refId="ContentResult_eventbinding" />
+    <EventBindingsSet refId="ContentCreateUser_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="DialogUser" />
     <Dialog refId="DialogResult" />
+    <Dialog refId="DialogCreateUser" />
   </Dialogs>
   <Contents>
     <Content refId="ContentTop" />
     <Content refId="ContentUser" />
     <Content refId="ContentHome" />
     <Content refId="ContentResult" />
+    <Content refId="ContentCreateUser" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
   <Configurations>
-		<Configuration key="activityCount" value="false" />
-		<Configuration key="zoom" value="true" />
+    <Configuration key="activityCount" value="false" />
+    <!--<Configuration key="zoom" value="true" />-->
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />
 		  <SystemGesture2 touchPoints="2" />

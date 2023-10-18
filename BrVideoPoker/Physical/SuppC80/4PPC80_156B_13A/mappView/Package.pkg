@@ -12,5 +12,7 @@
     <Object Type="File">ContentResult.binding</Object>
     <Object Type="File">ContentResult.eventbinding</Object>
     <Object Type="File">ContentTop.binding</Object>
+    <Object Type="File">ContentCreateUser.binding</Object>
+    <Object Type="File">ContentCreateUser.eventbinding</Object>
   </Objects>
 </Package>
