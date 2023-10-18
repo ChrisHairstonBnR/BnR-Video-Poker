@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <vdef:Visualization id="PokerVis" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
-  <StartPage pageRefId="HomePage" />
+  <StartPage pageRefId="HomePage169" />
   <Pages>
     <Page refId="GameplayPage" />
     <Page refId="HomePage" />
+    <Page refId="GameplayPage169" />
+    <Page refId="HomePage169" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -16,9 +18,9 @@
     <EventBindingsSet refId="ContentGame_eventbinding" />
     <EventBindingsSet refId="ContentUser_eventbinding" />
     <EventBindingsSet refId="ContentTop_eventbinding" />
-    <EventBindingsSet refId="ContentHome_eventbinding" />
     <EventBindingsSet refId="ContentResult_eventbinding" />
     <EventBindingsSet refId="ContentCreateUser_eventbinding" />
+    <EventBindingsSet refId="ContentHome_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="DialogUser" />
@@ -31,13 +33,16 @@
     <Content refId="ContentHome" />
     <Content refId="ContentResult" />
     <Content refId="ContentCreateUser" />
+    <Content refId="ContentTop169" />
+    <Content refId="ContentDummyRight" />
+    <Content refId="ContentDummyLeft" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
   <Configurations>
     <Configuration key="activityCount" value="false" />
-    <!--<Configuration key="zoom" value="true" />-->
+    <Configuration key="zoom" value="true" />
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />
 		  <SystemGesture2 touchPoints="2" />

@@ -1,151 +1,236 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingSet id="ContentHome_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-    <EventBinding id="ContentHome.Button_GameChoice6.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice6" event="Click" />
-      <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="6" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
-      </EventHandler>
-    </EventBinding>
     <EventBinding id="ContentHome.Button_GameChoice1.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice1" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
     <EventBinding id="ContentHome.Button_GameChoice2.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice2" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="2" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="2" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
     <EventBinding id="ContentHome.Button_GameChoice3.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice3" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="3" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="3" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
     <EventBinding id="ContentHome.Button_GameChoice4.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice4" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="4" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="4" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
     <EventBinding id="ContentHome.Button_GameChoice5.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice5" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="5" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="5" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentHome.Button_GameChoice6.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice6" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="6" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
     <EventBinding id="ContentHome.Button_GameChoice7.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice7" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="7" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="7" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentHome.Button_GameChoice8.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice8" event="Click" />
+      <Operand datatype="ANY_STRING" name="CurrentPage">
+        <ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.currentPageId">
+          <Method xsi:type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="8" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="CurrentPage = &quot;HomePage169&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage169" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
     <EventBinding id="ContentHome.Button_User.Click">
@@ -156,27 +241,6 @@
             <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="DialogUser" />
           </Target>
         </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="ContentHome.Button_GameChoice8.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentHome" widgetRefId="Button_GameChoice8" event="Click" />
-      <EventHandler>
-        <Sequence>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Navigate" pageId="GameplayPage" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCurrentGame">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="8" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
       </EventHandler>
     </EventBinding>
   </Bindings>

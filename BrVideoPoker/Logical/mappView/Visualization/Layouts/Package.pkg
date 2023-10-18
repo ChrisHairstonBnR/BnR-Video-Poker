@@ -6,5 +6,7 @@
     <Object Type="File">LayoutDialog.layout</Object>
     <Object Type="File">LayoutGeneral.layout</Object>
     <Object Type="File">LayoutResult.layout</Object>
+    <Object Type="File">LayoutGame169.layout</Object>
+    <Object Type="File">LayoutGeneral169.layout</Object>
   </Objects>
 </Package>

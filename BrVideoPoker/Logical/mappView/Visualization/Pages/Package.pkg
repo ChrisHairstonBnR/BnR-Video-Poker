@@ -5,5 +5,7 @@
     <Object Type="Package" Description="AreaContents">AreaContents</Object>
     <Object Type="Package">GameplayPage</Object>
     <Object Type="Package">HomePage</Object>
+    <Object Type="Package">GameplayPage169</Object>
+    <Object Type="Package">HomePage169</Object>
   </Objects>
 </Package>
