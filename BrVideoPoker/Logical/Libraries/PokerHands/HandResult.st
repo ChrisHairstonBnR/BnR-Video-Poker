@@ -71,7 +71,10 @@ FUNCTION HandResult
 			ResultBools.ThreeOfAKind := TRUE;
 			
 		ELSIF ColumnTotals[k] = 2 THEN
-			PairCount := PairCount + 1;
+			IF k <> 1 THEN
+				PairCount := PairCount + 1;
+			END_IF
+			
 			ResultBools.AnyPair := TRUE;
 			IF k >= 11 AND k <= 14 THEN
 				ResultBools.FacePair := TRUE;
