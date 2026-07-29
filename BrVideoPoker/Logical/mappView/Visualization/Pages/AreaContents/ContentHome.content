@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentHome" height="600" width="800" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Content id="ContentHome" guid="9e8a7f73-1e1d-4378-893b-17c7babb0bef" height="600" width="800" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.Button" id="Button_User" top="0" left="0" width="50" height="40" zIndex="0" image="Media/SymbolLib/User/User.svg" imageColor="rgba(255, 255, 255, 1)" borderWidth="0px" backColor="rgba(255, 255, 255, 0)" />
     <Widget xsi:type="widgets.brease.Label" id="Label_Title" top="50" left="0" width="800" height="80" zIndex="3" text="Video Poker" textColor="rgba(128, 255, 255, 1)" textAlign="center" fontSize="90px" bold="true" underline="true" />

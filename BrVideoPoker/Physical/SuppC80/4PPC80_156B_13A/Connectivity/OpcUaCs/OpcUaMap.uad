@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="6.0"?>
+<OpcUaSource FileVersion="10" ArVersion="E4.92">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <Module Name="&lt;Default&gt;">
+    <GlobalVariables Name="Global Variables">
+      <Variable Name="gCurrentGame" />
+      <Variable Name="gPlayer" RecursiveEnable="1">
+        <Variable Name="Balance" />
+        <Variable Name="Hand" RecursiveEnable="1" />
+        <Variable Name="HoldArr" RecursiveEnable="1" />
+        <Variable Name="ChosenBet" />
+        <Variable Name="Winnings" />
+        <Variable Name="Result" />
+        <Variable Name="LoggedIn" />
+      </Variable>
+      <Variable Name="gCommand" RecursiveEnable="1">
+        <Variable Name="CMD_Action" />
+      </Variable>
+      <Variable Name="gPayTable" RecursiveEnable="1">
+        <Variable Name="WinningsScalarArr" RecursiveEnable="1" />
+      </Variable>
+    </GlobalVariables>
+    <Task Name="GameCode">
+      <Variable Name="GameState" />
+      <Variable Name="ActionButtonStr" />
+      <Variable Name="DeckCardCount" />
+    </Task>
+    <Task Name="UserSys">
+      <Variable Name="CurrentUser" />
+      <Variable Name="CreateUserNameStr" />
+      <Variable Name="CreateUserPassStr" />
+      <Variable Name="CMD_CreateUser" />
+      <Variable Name="ErrorStr" />
+      <Variable Name="CMD_UserCreationDone" />
+    </Task>
+    <Task Name="VisCtrl">
+      <Variable Name="BetIndex" />
+      <Variable Name="CardStr" RecursiveEnable="1" />
+      <Variable Name="EnableBetting" />
+      <Variable Name="ResultStr" />
+      <Variable Name="GameStr" />
+      <Variable Name="NotLoggedIn" />
+      <Variable Name="PayTableStr" RecursiveEnable="1" />
+      <Variable Name="PayTableVisible" RecursiveEnable="1" />
+      <Variable Name="PayTableScaledWinnings" RecursiveEnable="1" />
+    </Task>
+  </Module>
+</OpcUaSource>

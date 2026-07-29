@@ -21,9 +21,9 @@
   </Objects>
   <Configuration ModuleId="PC_any">
     <AutomationRuntime Version="D4.92" />
-    <Build GccVersion="4.1.2" />
+    <Build GccVersion="11.3.0" />
     <DefaultTargetMemory Tasks="UserROM" />
-    <Transfer SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" />
+    <Transfer />
     <Vc FirmwareVersion="V4.72.5" />
   </Configuration>
 </Cpu>

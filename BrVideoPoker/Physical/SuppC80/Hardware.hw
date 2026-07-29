@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.12.8.41 FileVersion="4.9"?>
+<?AutomationStudio WorkingVersion="6.5" FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
-  <Module Name="4PPC80_156B_13A" Type="4PPC80.156B-13A" Version="1.0.0.5">
+  <Module Name="4PPC80_156B_13A" Type="4PPC80.156B-13A" Version="1.4.0.0">
     <Connector Name="IF2">
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
@@ -28,5 +28,8 @@
     <Parameter ID="ActivateOpcUa" Value="1" />
     <Parameter ID="OpcUa_SamplingTimer_Default" Value="4" />
     <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
+    <Parameter ID="ActivateFtpServer" Value="1" />
+    <Parameter ID="ActivateWebServer" Value="1" />
+    <Parameter ID="ActivateSdm" Value="1" />
   </Module>
 </Hardware>

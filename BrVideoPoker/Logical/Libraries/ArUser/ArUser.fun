@@ -284,47 +284,11 @@ END_FUNCTION_BLOCK
 	END_VAR
 END_FUNCTION_BLOCK
 
-{REDUND_CONTEXT} {REDUND_UNREPLICABLE} FUNCTION_BLOCK ArUserExport (*Write all users to a file; asynchronous execution.*)
-	VAR_INPUT
-		Execute			: BOOL;					(*Start execution.*)
-		FilePath		: STRING[128];			(*The path of the file to create.*)
-	END_VAR
-	
-	VAR_OUTPUT
-		Done			: BOOL;					(*Execution done.*)
-		Busy			: BOOL;					(*Execution running.*)
-		Error			: BOOL;					(*Execution failed.*)
-		ErrorID			: DINT;  				(*Execution error: see help.*)
-	END_VAR
-	
-	VAR	
-        Internal		: ArUserAsyncInternalType;(*Internal variable.*)
-	END_VAR
-END_FUNCTION_BLOCK
-
 {REDUND_CONTEXT} {REDUND_UNREPLICABLE} FUNCTION_BLOCK ArUserExportEx (*Write all users to a file located on file device; asynchronous execution.*)
 	VAR_INPUT
 		Execute			: BOOL;					(*Start execution.*)
 		Device			: STRING[128];			(*Name of the file device where the file should be located.*)
 		LocalPath		: STRING[128];			(*The path(name) of the file to create.*)
-	END_VAR
-	
-	VAR_OUTPUT
-		Done			: BOOL;					(*Execution done.*)
-		Busy			: BOOL;					(*Execution running.*)
-		Error			: BOOL;					(*Execution failed.*)
-		ErrorID			: DINT;  				(*Execution error: see help.*)
-	END_VAR
-	
-	VAR	
-        Internal		: ArUserAsyncInternalType;(*Internal variable.*)
-	END_VAR
-END_FUNCTION_BLOCK
-
-{REDUND_CONTEXT} {REDUND_UNREPLICABLE} FUNCTION_BLOCK ArUserImport (*Delete existing users and import users from a file; asynchronous execution.*)
-	VAR_INPUT
-		Execute			: BOOL;					(*Start execution.*)
-		FilePath		: STRING[128];			(*The path of the file to import.*)
 	END_VAR
 	
 	VAR_OUTPUT

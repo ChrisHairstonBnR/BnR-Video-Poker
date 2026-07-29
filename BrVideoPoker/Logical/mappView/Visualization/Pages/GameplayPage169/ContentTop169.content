@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentTop169" height="200" width="800" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Content id="ContentTop169" guid="2659b2b1-2628-4aca-980c-628b7da605d4" height="200" width="800" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.FlyOut" id="FlyOut_Menu" top="0" left="0" width="800" height="300" zIndex="0" autoClose="true" docking="top" image="Media/SymbolLib/Edit/Maximize.svg" showOnTop="true" buttonHeight="75" buttonWidth="75" imageHeight="40" imageWidth="40" imageColor="rgba(128, 128, 255, 1)" buttonBorderStyle="none" buttonBackColor="rgba(0, 0, 0, 1)" backColor="rgba(128, 128, 255, 1)" textColor="rgba(0, 0, 0, 1)">
       <Widgets>
