@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="6.0"?>
-<OpcUaSource FileVersion="10" ArVersion="E4.92">
+<OpcUaSource FileVersion="10">
   <Aliases>
-    <ACLAliases />
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleName="Player" Access="0x1061" />
+      </ACL>
+      <ACL Id="2">
+        <ACE RoleName="Player" Access="0x10EF" />
+      </ACL>
+    </ACLAliases>
     <EURangeViolationAliases />
     <EURangesAliases />
     <EngineeringUnitAliases />
@@ -10,7 +17,7 @@
   <Module Name="&lt;Default&gt;">
     <GlobalVariables Name="Global Variables">
       <Variable Name="gCurrentGame" />
-      <Variable Name="gPlayer" RecursiveEnable="1">
+      <Variable AclId="2" AclInherit="2" Name="gPlayer" RecursiveEnable="1">
         <Variable Name="Balance" />
         <Variable Name="Hand" RecursiveEnable="1" />
         <Variable Name="HoldArr" RecursiveEnable="1" />

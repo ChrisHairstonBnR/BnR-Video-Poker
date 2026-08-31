@@ -66,11 +66,12 @@ PROGRAM _CYCLIC
 	
 	CASE CreateUserState OF
 		CREATE_USER_WAIT:
-			//CMD_UserCreationDone := FALSE;
+			CMD_UserCreationDone := FALSE;
 			IF CMD_CreateUser THEN
 				CreateUserState := CREATE_USER_CREATE;
-				CMD_UserCreationDone := FALSE;
+				//CMD_UserCreationDone := FALSE;
 			END_IF
+			
 		CREATE_USER_CREATE:
 			ArUserCreate_FB.Execute := TRUE;
 			ArUserCreate_FB.UserName := CreateUserNameStr;
@@ -88,6 +89,7 @@ PROGRAM _CYCLIC
 				ErrorCode := ArUserCreate_FB.ErrorID;
 				CreateUserState := CREATE_USER_ERROR;
 			END_IF
+			
 		CREATE_USER_SET_PASSWORD:
 			ArUserSetPassword_FB.Execute := TRUE;
 			ArUserSetPassword_FB.UserName := CreateUserNameStr;
@@ -100,19 +102,34 @@ PROGRAM _CYCLIC
 				ArUserSetPassword_FB.Execute := FALSE;
 				ArUserSetPassword_FB.UserName := '';
 				ArUserSetPassword_FB.Password := '';
-				CMD_CreateUser := FALSE;
-				ErrorCode := ArUserSetPassword_FB.ErrorID;
-				CMD_UserCreationDone := TRUE;
-				CreateUserState := CREATE_USER_WAIT;
+				CreateUserState := CREATE_USER_ASSIGN_ROLE;
 			ELSIF ArUserSetPassword_FB.Error THEN
 				ArUserSetPassword_FB.Execute := FALSE;
 				ArUserSetPassword_FB.UserName := '';
 				ArUserSetPassword_FB.Password := '';
+				ErrorCode := ArUserSetPassword_FB.ErrorID;
 				CMD_CreateUser := FALSE;
 				CreateUserState := CREATE_USER_ERROR;
 			END_IF
 			
+		CREATE_USER_ASSIGN_ROLE:
+			ArUserAssignRole_FB.Execute := TRUE;
+			ArUserAssignRole_FB.UserName := CreateUserNameStr;
+			ArUserAssignRole_FB.RoleName := 'Player';
+			IF ArUserAssignRole_FB.Busy THEN
+				//do nothing
+			ELSIF ArUserAssignRole_FB.Done THEN
+				ArUserAssignRole_FB.Execute := FALSE;
+				ArUserAssignRole_FB.UserName := '';
+				ArUserAssignRole_FB.RoleName := '';
+				CreateUserState := CREATE_USER_ERROR; //go to user state, if no error it will progress to wait
+			END_IF
+			
+			
 		CREATE_USER_ERROR:
+			CMD_CreateUser := FALSE;
+			CMD_UserCreationDone := TRUE;
+			CreateUserState := CREATE_USER_WAIT;
 			CASE ErrorCode OF
 				arUSER_ERR_PARAMETER:
 					ErrorStr := 'The function block was called with an invalid parameter.'; //Should not occur unless programmer has messed up
@@ -134,6 +151,10 @@ PROGRAM _CYCLIC
 	ArUserSetPassword_FB();
 	ArUserGetProperty_FB();
 	ArUserSetProperty_FB();
+	ArUserAssignRole_FB();
+	
+	
+	
 	
 	//MpUserXManagerUI for monitoring (requres mpuserxlogin)
 	MpUserXLogin_FB(MpLink :=  ADR(gUserXLogin), Enable := TRUE);

@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* MpUserX 5.22.1 */
+/* MpUserX 6.7.1 */
 
 #ifndef _MPUSERX_
 #define _MPUSERX_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _MpUserX_VERSION
-#define _MpUserX_VERSION 5.22.1
+#define _MpUserX_VERSION 6.7.1
 #endif
 
 #include <bur/plctypes.h>
@@ -32,21 +32,14 @@ extern "C"
 
 
 /* Datatypes and datatypes of function blocks */
-typedef enum MpUserXAccessRightEnum
-{	mpUSERX_ACCESS_UNDEFINED = 0,
-	mpUSERX_ACCESS_NONE = 1,
-	mpUSERX_ACCESS_VIEW = 2,
-	mpUSERX_ACCESS_ACTUATE = 3,
-	mpUSERX_ACCESS_FULL = 4
-} MpUserXAccessRightEnum;
-
 typedef enum MpUserXUIMessageEnum
-{	mpUSERX_MSG_NONE = 0,
-	mpUSERX_MSG_ERROR = 1,
-	mpUSERX_MSG_CONFIRM_DELETE = 2,
-	mpUSERX_MSG_CONFIRM_LOCK = 3,
-	mpUSERX_MSG_CONFIRM_UNLOCK = 4,
-	mpUSERX_MSG_CONFIRM_ROLE_DELETE = 5
+{	mpUSERX_UI_MSG_NONE = 0,
+	mpUSERX_UI_MSG_WARNING = 1,
+	mpUSERX_UI_MSG_ERROR = 2,
+	mpUSERX_UI_MSG_CONFIRM_DELETE = 3,
+	mpUSERX_UI_MSG_CONFIRM_LOCK = 4,
+	mpUSERX_UI_MSG_CONFIRM_UNLOCK = 5,
+	mpUSERX_UI_MSG_CONFIRM_ROLE_DEL = 6
 } MpUserXUIMessageEnum;
 
 typedef enum MpUserXMgrUIImportConfirmEnum
@@ -58,32 +51,21 @@ typedef enum MpUserXUIStatusEnum
 {	mpUSERX_UI_STATUS_IDLE = 0,
 	mpUSERX_UI_STATUS_WAIT_DLG = 1,
 	mpUSERX_UI_STATUS_EXECUTE = 2,
+	mpUSERX_UI_STATUS_WARNING = 98,
 	mpUSERX_UI_STATUS_ERROR = 99
 } MpUserXUIStatusEnum;
-
-typedef enum MpUserXImportModeEnum
-{	mpUSERX_IMPORT_SKIP = 0,
-	mpUSERX_IMPORT_IGNORE_EXISITNG = 1,
-	mpUSERX_IMPORT_OVERWRITE = 2,
-	mpUSERX_IMPORT_OVERWRITE_ONLY = 4,
-	mpUSERX_IMPORT_REMOVE_EXISTING = 5
-} MpUserXImportModeEnum;
-
-typedef enum MpUserXUserMgmtEnum
-{	mpUSERX_USERMGMT_LOCAL = 0,
-	mpUSERX_USERMGMT_CENTRAL = 1,
-	mpUSERX_USERMGMT_LOCALANDCENTRAL = 2
-} MpUserXUserMgmtEnum;
-
-typedef enum MpUserXServerEnum
-{	mpUSERX_SERVER_ACTIVE_DIRECTORY = 0,
-	mpUSERX_SERVER_389DS = 1
-} MpUserXServerEnum;
 
 typedef enum MpUserXUserTypeEnum
 {	mpUSERX_USER_LOCAL = 0,
 	mpUSERX_USER_CENTRAL = 1
 } MpUserXUserTypeEnum;
+
+typedef enum MpUserXMeasurementSystemEnum
+{	mpUSERX_ENGINEERING_UNITS = 0,
+	mpUSERX_METRIC = 1,
+	mpUSERX_IMPERIAL = 2,
+	mpUSERX_IMPERIAL_US = 3
+} MpUserXMeasurementSystemEnum;
 
 typedef enum MpUserXUIPasswordCriteriaEnum
 {	mpUSERX_PASSWORD_CRIT_NONE = 0,
@@ -108,22 +90,15 @@ typedef enum MpUserXErrorEnum
 	mpUSERX_WRN_CONFIG_LOAD = -2137980917,
 	mpUSERX_ERR_CONFIG_SAVE = -1064239092,
 	mpUSERX_ERR_CONFIG_INVALID = -1064239091,
-	mpUSERX_ERR_PASSWORD_INCORRECT = -1064144896,
 	mpUSERX_ERR_USER_NOT_EXISTING = -1064144895,
 	mpUSERX_ERR_USER_EXISTS = -1064144894,
-	mpUSERX_ERR_LOGIN_ID_INVALID = -1064144893,
-	mpUSERX_ERR_ADMIN_INVALID = -1064144892,
 	mpUSERX_ERR_INSUFFICIENT_RIGHTS = -1064144891,
-	mpUSERX_ERR_ROLE_NOT_PRESENT = -1064144890,
-	mpUSERX_ERR_PASSWORD_WEAK = -1064144889,
+	mpUSERX_ERR_ROLE_NOT_EXISTING = -1064144890,
 	mpUSERX_ERR_USER_IS_LOCKED = -1064144888,
 	mpUSERX_ERR_PASSWORD_CHANGE_REQ = -1064144887,
-	mpUSERX_ERR_TOO_MANY_LOGINS = -1064144886,
 	mpUSERX_ERR_NO_ADMIN_RIGHTS = -1064144885,
 	mpUSERX_ERR_LOGIN_INST_EXISTS = -1064144884,
 	mpUSERX_ERR_NOT_LOGGED_IN = -1064144883,
-	mpUSERX_ERR_PASSWORD_IDENTICAL = -1064144881,
-	mpUSERX_ERR_LOGIN_ID_EXISTS = -1064144880,
 	mpUSERX_WRN_PASSWORD_CHANGE_REQ = -2137886702,
 	mpUSERX_ERR_ROLE_INDEX_NOT_OK = -1064144877,
 	mpUSERX_ERR_NO_ROLENAME = -1064144876,
@@ -131,20 +106,14 @@ typedef enum MpUserXErrorEnum
 	mpUSERX_ERR_MISSING_UICONNECT = -1064144874,
 	mpUSERX_ERR_NO_USERNAME = -1064144873,
 	mpUSERX_ERR_NO_PASSWORD = -1064144872,
-	mpUSERX_ERR_MISSING_LOGIN = -1064144871,
 	mpUSERX_ERR_PASSWORD_CONFIRM = -1064144870,
 	mpUSERX_ERR_IMPORT_DATA = -1064144868,
 	mpUSERX_ERR_LOAD_IMPORT_FILE = -1064144867,
 	mpUSERX_ERR_SAVE_EXPORT_FILE = -1064144866,
-	mpUSERX_ERR_ROLENAME_TOO_LONG = -1064144865,
-	mpUSERX_ERR_USERNAME_TOO_LONG = -1064144864,
-	mpUSERX_ERR_PASSWORD_TOO_LONG = -1064144863,
-	mpUSERX_INF_WAIT_LOGIN_FB = 1083338786,
 	mpUSERX_ERR_USERNAME_TOO_SHORT = -1064144861,
 	mpUSERX_ERR_ROLE_EXISTS = -1064144860,
 	mpUSERX_ERR_FAILED_SIGNATURES = -1064144858,
 	mpUSERX_ERR_SIGNATURE_BUSY = -1064144857,
-	mpUSERX_ERR_PASSWORD_REPEAT = -1064144856,
 	mpUSERX_ERR_IMPORT_FILE_FORMAT = -1064144855,
 	mpUSERX_WRN_KEY_DUPLICATE = -2137886678,
 	mpUSERX_ERR_INFO_NOT_FOUND = -1064144853,
@@ -158,24 +127,70 @@ typedef enum MpUserXErrorEnum
 	mpUSERX_ERR_PASSWORD_RESTRICTION = -1064144845,
 	mpUSERX_ERR_FUNCTION_UNAVAILABLE = -1064144844,
 	mpUSERX_WRN_PASSWORD_WILL_EXPIRE = -2137886667,
-	mpUSERX_WRN_INVALID_DISPLAY_NAME = -2137886666
+	mpUSERX_WRN_INVALID_DISPLAY_NAME = -2137886666,
+	mpUSERX_ERR_REQUEST_LIMIT = -1064144841,
+	mpUSERX_ERR_SESSION_LIMIT = -1064144840,
+	mpUSERX_ERR_DELETE_BR_ROLE = -1064144839,
+	mpUSERX_WRN_IMPORT_FILE_FORMAT = -2137886662,
+	mpUSERX_WRN_IMPORT_DATA = -2137886661
 } MpUserXErrorEnum;
 
-typedef enum MpUserXLoginAlarmEnum
-{	mpUSERX_ALM_USER_LOCKED = 0
-} MpUserXLoginAlarmEnum;
+typedef enum MpUserXCfgEnum
+{	mpUSERX_CFG_CORE = 100,
+	mpUSERX_CFG_LOGIN = 120,
+	mpUSERX_CFG_MAPPING = 140,
+	mpUSERX_CFG_SIGN = 160
+} MpUserXCfgEnum;
+
+typedef enum MpUserXCfgImportModesEnum
+{	mpUSERX_CFG_IMPORT_SKIP = 0,
+	mpUSERX_CFG_IMPORT_IGN_EXISTING = 1,
+	mpUSERX_CFG_IMPORT_OVR_EXISTING = 2,
+	mpUSERX_CFG_IMPORT_OVR_ONLY = 4,
+	mpUSERX_CFG_IMPORT_RMV_EXISTING = 5
+} MpUserXCfgImportModesEnum;
+
+typedef enum MpUserXCfgUserMgmtSystemEnum
+{	mpUSERX_CFG_LOCAL = 0,
+	mpUSERX_CFG_CENTRAL = 1,
+	mpUSERX_CFG_CENTRAL_THEN_LOCAL = 2,
+	mpUSERX_CFG_LOCAL_THEN_CENTRAL = 3
+} MpUserXCfgUserMgmtSystemEnum;
+
+typedef enum MpUserXCfgAuthMethodEnum
+{	mpUSERX_CFG_LDAPS = 0,
+	mpUSERX_CFG_LDAPSTARTTLS = 1,
+	mpUSERX_CFG_LDAP = 2
+} MpUserXCfgAuthMethodEnum;
+
+typedef enum MpUserXCfgServerTypeEnum
+{	mpUSERX_CFG_ACTIVE_DIRECTORY = 0,
+	mpUSERX_CFG_389_DIRECTORY_SERVER = 1
+} MpUserXCfgServerTypeEnum;
+
+typedef enum MpUserXCfgEditSameLevelEnum
+{	mpUSERX_CFG_EDIT_SAME_LEVEL_NONE = 0,
+	mpUSERX_CFG_EDIT_SAME_LEVEL_SELF = 1,
+	mpUSERX_CFG_EDIT_SAME_LEVEL_ALL = 2
+} MpUserXCfgEditSameLevelEnum;
+
+typedef enum MpUserXCfgFileChecksumEnum
+{	mpUSERX_CFG_CHECKSUM_IGNORE = 0,
+	mpUSERX_CFG_CHECKSUM_WARNING = 1,
+	mpUSERX_CFG_CHECKSUM_ERROR = 2
+} MpUserXCfgFileChecksumEnum;
 
 typedef struct MpUserXUIMessageBoxType
 {	unsigned short LayerStatus;
 	enum MpUserXUIMessageEnum Type;
 	unsigned short ErrorNumber;
+	signed long StatusID;
 	plcbit Confirm;
 	plcbit Cancel;
 } MpUserXUIMessageBoxType;
 
 typedef struct MpUserXMgrUIUserListType
-{	plcwstring UserNames[20][51];
-	unsigned char UserOptions[20];
+{	plcwstring UserNames[20][101];
 	unsigned short MaxSelection;
 	unsigned short SelectedIndex;
 	plcbit PageUp;
@@ -187,19 +202,19 @@ typedef struct MpUserXMgrUIUserListType
 } MpUserXMgrUIUserListType;
 
 typedef struct MpUserXMgrUIAdditionalDataType
-{	plcwstring Key[21];
+{	plcwstring Key[101];
 	plcwstring Value[256];
 } MpUserXMgrUIAdditionalDataType;
 
 typedef struct MpUserXMgrUIUserInfoType
-{	plcwstring UserName[51];
+{	plcwstring UserName[101];
 	plcwstring FullName[101];
-	unsigned short Roles[10];
+	unsigned short Roles[30];
 	plcbit Locked;
 	plcbit Expired;
 	unsigned char RemainingAttempts;
 	plcstring Language[21];
-	plcstring DisplayUnit[21];
+	enum MpUserXMeasurementSystemEnum MeasurementSystem;
 	plcdt Creation;
 	plcdt FirstLogin;
 	plcdt LastLogin;
@@ -209,7 +224,7 @@ typedef struct MpUserXMgrUIUserInfoType
 } MpUserXMgrUIUserInfoType;
 
 typedef struct MpUserXMgrUIRoleListType
-{	plcwstring Names[10][51];
+{	plcwstring Names[20][101];
 	unsigned short SelectedIndex;
 	unsigned short MaxSelection;
 	plcbit PageUp;
@@ -221,34 +236,29 @@ typedef struct MpUserXMgrUIRoleListType
 } MpUserXMgrUIRoleListType;
 
 typedef struct MpUserXMgrUIRoleInfoType
-{	plcwstring Name[51];
+{	plcwstring Name[101];
 	unsigned short Index;
 	signed long Level;
 	plcbit Admin;
-	enum MpUserXAccessRightEnum AccessRights[20];
 } MpUserXMgrUIRoleInfoType;
 
 typedef struct MpUserXMgrUIRoleDlgType
 {	unsigned short LayerStatus;
-	plcwstring Name[51];
+	plcwstring Name[101];
 	unsigned short Index;
 	signed long Level;
 	signed long LevelLimit;
 	plcbit Admin;
-	enum MpUserXAccessRightEnum AccessRights[20];
-	enum MpUserXAccessRightEnum AccessRightsLimit[20];
 	plcbit Confirm;
 	plcbit Cancel;
 } MpUserXMgrUIRoleDlgType;
 
 typedef struct MpUserXMgrUIRoleCreateDlgType
 {	unsigned short LayerStatus;
-	plcwstring Name[51];
+	plcwstring Name[101];
 	signed long Level;
 	signed long LevelLimit;
 	plcbit Admin;
-	enum MpUserXAccessRightEnum AccessRights[20];
-	enum MpUserXAccessRightEnum AccessRightsLimit[20];
 	plcbit Confirm;
 	plcbit Cancel;
 } MpUserXMgrUIRoleCreateDlgType;
@@ -267,14 +277,14 @@ typedef struct MpUserXMgrUIRoleEditType
 
 typedef struct MpUserXMgrUICreateDlgType
 {	unsigned short LayerStatus;
-	plcwstring UserName[51];
+	plcwstring UserName[101];
 	plcwstring FullName[101];
-	unsigned short Roles[10];
-	unsigned char RoleOption[20];
-	plcwstring NewPassword[51];
-	plcwstring ConfirmPassword[51];
+	unsigned short Roles[30];
+	unsigned char RoleOption[30];
+	plcwstring NewPassword[101];
+	plcwstring ConfirmPassword[101];
 	plcstring Language[21];
-	plcstring DisplayUnit[21];
+	enum MpUserXMeasurementSystemEnum MeasurementSystem;
 	enum MpUserXUIPasswordCriteriaEnum CriteriaNotMet;
 	unsigned short NewPasswordOk;
 	unsigned short ConfirmPasswordOk;
@@ -335,7 +345,7 @@ typedef struct MpUserXMgrUIImportDlgType
 typedef struct MpUserXMgrUIImportConfirmType
 {	unsigned short LayerStatus;
 	enum MpUserXMgrUIImportConfirmEnum Type;
-	plcwstring Name[51];
+	plcwstring Name[101];
 	unsigned short NumberOfConflicts;
 	plcbit ApplyForAll;
 	plcbit Confirm;
@@ -358,7 +368,7 @@ typedef struct MpUserXMgrUIUserType
 } MpUserXMgrUIUserType;
 
 typedef struct MpUserXMgrUIRoleSelectType
-{	plcwstring Names[20][51];
+{	plcwstring Names[30][101];
 	unsigned short MaxSelection;
 } MpUserXMgrUIRoleSelectType;
 
@@ -382,9 +392,9 @@ typedef struct MpUserXMgrUIConnectType
 } MpUserXMgrUIConnectType;
 
 typedef struct MpUserXLoginUIPwdDlgType
-{	plcwstring OldPassword[51];
-	plcwstring NewPassword[51];
-	plcwstring ConfirmPassword[51];
+{	plcwstring OldPassword[101];
+	plcwstring NewPassword[101];
+	plcwstring ConfirmPassword[101];
 	unsigned short LayerStatus;
 	plcbit Confirm;
 	plcbit Cancel;
@@ -401,15 +411,15 @@ typedef struct MpUserXLoginUIPwdType
 typedef struct MpUserXLoginUILoginType
 {	plcbit Login;
 	plcbit Logout;
-	plcwstring UserName[51];
-	plcwstring Password[51];
+	plcwstring UserName[101];
+	plcwstring Password[101];
 } MpUserXLoginUILoginType;
 
 typedef struct MpUserXLoginUIConnectType
 {	enum MpUserXUIStatusEnum Status;
-	plcwstring CurrentUser[51];
+	plcwstring CurrentUser[101];
 	plcstring Language[21];
-	plcstring DisplayUnit[21];
+	enum MpUserXMeasurementSystemEnum MeasurementSystem;
 	plcbit LoggedIn;
 	signed long UserLevel;
 	struct MpUserXLoginUILoginType Login;
@@ -419,72 +429,10 @@ typedef struct MpUserXLoginUIConnectType
 	enum MpUserXUserTypeEnum UserType;
 } MpUserXLoginUIConnectType;
 
-typedef struct MpUserXConfigType
-{	plcbit NoDelete;
-	plcbit PasswordChangeReq;
-	plcbit PasswordCase;
-	plcbit PasswordAlpha;
-	unsigned short PasswordLength;
-	unsigned short LoginAttempts;
-	signed long PasswordChangeInterval;
-	signed long UserExpirationTime;
-	unsigned short UserNameLength;
-	unsigned short SignAttempts;
-	unsigned short PasswordHistory;
-	plcbit PasswordSpecial;
-	plcbit EditSameLevel;
-	enum MpUserXImportModeEnum ImportUser;
-	enum MpUserXImportModeEnum ImportRole;
-	plcbit ImportUnchecked;
-	signed long AdminUnlockTime;
-	signed long AutoLogoutTime;
-	signed long PasswordExpirationNotification;
-} MpUserXConfigType;
-
-typedef struct MpUserXHostType
-{	plcstring Host[256];
-	unsigned short Port;
-	plcstring Certificate[256];
-	plcstring BaseDN[256];
-	plcstring UserLocationDN[256];
-} MpUserXHostType;
-
-typedef struct MpUserXGroupToRoleMappingType
-{	plcstring TableName[51];
-} MpUserXGroupToRoleMappingType;
-
-typedef struct MpUserXServerType
-{	enum MpUserXServerEnum Type;
-	struct MpUserXHostType Hosts[10];
-	struct MpUserXGroupToRoleMappingType Mapping;
-	plcstring AdditionalUserData[10][101];
-	plcstring DisplayName[101];
-	unsigned short Timeout;
-} MpUserXServerType;
-
-typedef struct MpUserXServerConfigType
-{	enum MpUserXUserMgmtEnum UserMgmtSystemType;
-	struct MpUserXServerType Server;
-	plcbit PrioritizeCentralUsers;
-} MpUserXServerConfigType;
-
-typedef struct MpUserXMappingMappingType
-{	plcwstring LocalRole[51];
-	plcwstring ServerGroup[51];
-} MpUserXMappingMappingType;
-
-typedef struct MpUserXMappingConfigType
-{	struct MpUserXMappingMappingType Mapping[100];
-} MpUserXMappingConfigType;
-
-typedef struct MpUserXLoginConfigType
-{	signed long AutoLogout;
-} MpUserXLoginConfigType;
-
 typedef struct MpUserXSignatureUIDlgType
 {	unsigned short LayerStatus;
-	plcwstring UserName[51];
-	plcwstring Password[51];
+	plcwstring UserName[101];
+	plcwstring Password[101];
 	plcwstring Comment[101];
 	plcbit Confirm;
 	plcbit Cancel;
@@ -492,7 +440,6 @@ typedef struct MpUserXSignatureUIDlgType
 
 typedef struct MpUserXSignatureUIConnectType
 {	enum MpUserXUIStatusEnum Status;
-	signed long SignAction;
 	struct MpUserXSignatureUIDlgType Dialog;
 	struct MpUserXUIMessageBoxType MessageBox;
 	unsigned short DefaultLayerStatus;
@@ -501,7 +448,6 @@ typedef struct MpUserXSignatureUIConnectType
 typedef struct MpUserXStatusIDType
 {	enum MpUserXErrorEnum ID;
 	MpComSeveritiesEnum Severity;
-	unsigned short Code;
 } MpUserXStatusIDType;
 
 typedef struct MpUserXDiagType
@@ -515,9 +461,21 @@ typedef struct MpUserXLoginInfoType
 	enum MpUserXUserTypeEnum UserType;
 } MpUserXLoginInfoType;
 
-typedef struct MpUserXInfoType
+typedef struct MpUserXManagerUIInfoType
 {	struct MpUserXDiagType Diag;
-} MpUserXInfoType;
+} MpUserXManagerUIInfoType;
+
+typedef struct MpUserXLoginUIInfoType
+{	struct MpUserXDiagType Diag;
+} MpUserXLoginUIInfoType;
+
+typedef struct MpUserXSignatureUIInfoType
+{	struct MpUserXDiagType Diag;
+} MpUserXSignatureUIInfoType;
+
+typedef struct MpUserXSignatureInfoType
+{	struct MpUserXDiagType Diag;
+} MpUserXSignatureInfoType;
 
 typedef struct MpUserXInternalType
 {	unsigned long pObject;
@@ -525,21 +483,153 @@ typedef struct MpUserXInternalType
 	signed long State;
 } MpUserXInternalType;
 
+typedef struct MpUserXCfgGeneralType
+{	plcbit EnableAuditing;
+} MpUserXCfgGeneralType;
+
+typedef struct MpUserXCfgUserMgmtType
+{	enum MpUserXCfgUserMgmtSystemEnum Type;
+} MpUserXCfgUserMgmtType;
+
+typedef struct MpUserXCfgHostType
+{	plcstring Host[254];
+	enum MpUserXCfgAuthMethodEnum AuthMethod;
+	signed long Port;
+	plcstring Certificate[256];
+	plcstring BaseDN[256];
+} MpUserXCfgHostType;
+
+typedef struct MpUserXCfgHostsType
+{	unsigned long NumberOfHosts;
+	struct MpUserXCfgHostType Hosts[1];
+} MpUserXCfgHostsType;
+
+typedef struct MpUserXCfgGroupToRoleMappingType
+{	plcstring MappingTableName[33];
+} MpUserXCfgGroupToRoleMappingType;
+
+typedef struct MpUserXCfgAddUserDataType
+{	unsigned long NumberOfAttributeName;
+	plcstring AttributeName[10][101];
+} MpUserXCfgAddUserDataType;
+
+typedef struct MpUserXCfgServerType
+{	struct MpUserXCfgHostsType Hosts;
+	signed long Timeout;
+	struct MpUserXCfgGroupToRoleMappingType GroupToRoleMapping;
+	plcstring DisplayName[101];
+	struct MpUserXCfgAddUserDataType AddUserData;
+} MpUserXCfgServerType;
+
+typedef struct MpUserXCfgServerTypeType
+{	enum MpUserXCfgServerTypeEnum Type;
+	struct MpUserXCfgServerType Server;
+} MpUserXCfgServerTypeType;
+
+typedef struct MpUserXCfgServerSettingsType
+{	struct MpUserXCfgServerTypeType Server;
+} MpUserXCfgServerSettingsType;
+
+typedef struct MpUserXCfgPasswordPolicyType
+{	signed long MaxAge;
+	signed long ExpirationNotification;
+	unsigned short HistorySize;
+	plcbit ChangeRequired;
+	plcbit RequireMixedCaseCharacters;
+	plcbit RequireAlphanumericCharacters;
+	plcbit RequireSpecialCharacters;
+	unsigned short MinLength;
+} MpUserXCfgPasswordPolicyType;
+
+typedef struct MpUserXCfgUserAccountType
+{	unsigned short InvalidPasswordAttempts;
+	signed long UserExpirationTime;
+	signed long AutoLogoutTime;
+	unsigned short MinUsernameLength;
+	plcbit PreventUsernameReuse;
+	signed long AdminUnlockTime;
+	enum MpUserXCfgEditSameLevelEnum EditSameLevel;
+} MpUserXCfgUserAccountType;
+
+typedef struct MpUserXCfgImportExportType
+{	enum MpUserXCfgImportModesEnum UserImportMode;
+	enum MpUserXCfgImportModesEnum RoleImportMode;
+	plcbit UncheckedImport;
+	enum MpUserXCfgFileChecksumEnum FileChecksum;
+} MpUserXCfgImportExportType;
+
+typedef struct MpUserXCfgType
+{	struct MpUserXCfgGeneralType General;
+	struct MpUserXCfgUserMgmtType UserMgmt;
+	struct MpUserXCfgServerSettingsType Server;
+	struct MpUserXCfgPasswordPolicyType PasswordPolicy;
+	struct MpUserXCfgUserAccountType UserAccount;
+	struct MpUserXCfgImportExportType ImportExport;
+} MpUserXCfgType;
+
+typedef struct MpUserXCfgLoginGeneralType
+{	plcbit Enable;
+	plcbit EnableCockpit;
+	plcbit EnableAuditing;
+	plcstring Parent[51];
+} MpUserXCfgLoginGeneralType;
+
+typedef struct MpUserXCfgLoginType
+{	struct MpUserXCfgLoginGeneralType General;
+} MpUserXCfgLoginType;
+
+typedef struct MpUserXCfgMappingEntryType
+{	plcstring LocalRole[101];
+	plcstring ServerGroup[256];
+} MpUserXCfgMappingEntryType;
+
+typedef struct MpUserXCfgMappingType
+{	struct MpBaseCfgArrayType Mappings;
+} MpUserXCfgMappingType;
+
+typedef struct MpUserXCfgSignGeneralType
+{	plcbit Enable;
+	plcbit EnableCockpit;
+	plcbit EnableAuditing;
+	plcstring Parent[51];
+} MpUserXCfgSignGeneralType;
+
+typedef struct MpUserXCfgSignActionType
+{	signed long ActionID;
+	signed long UserLevel;
+} MpUserXCfgSignActionType;
+
+typedef struct MpUserXCfgSignActionsType
+{	struct MpBaseCfgArrayType Actions;
+} MpUserXCfgSignActionsType;
+
+typedef struct MpUserXCfgSignSignatureType
+{	unsigned short MaxAttempts;
+	signed long MinUserLevel;
+	plcstring Identifier[101];
+	struct MpUserXCfgSignActionsType Actions;
+} MpUserXCfgSignSignatureType;
+
+typedef struct MpUserXCfgSignType
+{	struct MpUserXCfgSignGeneralType General;
+	struct MpUserXCfgSignSignatureType Signature;
+} MpUserXCfgSignType;
+
 typedef struct MpUserXLogin
 {
 	/* VAR_INPUT (analog) */
 	struct MpComIdentType* MpLink;
 	signed long LifeSign;
-	plcwstring (*UserName);
-	plcwstring (*Password);
+	plcwstring *UserName;
+	plcwstring *Password;
 	/* VAR_OUTPUT (analog) */
 	signed long StatusID;
-	plcwstring CurrentUser[51];
+	plcwstring CurrentUser[101];
 	signed long CurrentLevel;
-	enum MpUserXAccessRightEnum AccessRights[20];
 	struct MpUserXLoginInfoType Info;
 	/* VAR (analog) */
-	struct MpUserXInternalType Internal;
+	unsigned char InternalState;
+	unsigned long InternalData[23];
 	/* VAR_INPUT (digital) */
 	plcbit Enable;
 	plcbit ErrorReset;
@@ -560,9 +650,10 @@ typedef struct MpUserXManagerUI
 	struct MpUserXMgrUIConnectType* UIConnect;
 	/* VAR_OUTPUT (analog) */
 	signed long StatusID;
-	struct MpUserXInfoType Info;
+	struct MpUserXManagerUIInfoType Info;
 	/* VAR (analog) */
-	struct MpUserXInternalType Internal;
+	unsigned char InternalState;
+	unsigned long InternalData[57];
 	/* VAR_INPUT (digital) */
 	plcbit Enable;
 	plcbit ErrorReset;
@@ -578,9 +669,10 @@ typedef struct MpUserXLoginUI
 	struct MpUserXLoginUIConnectType* UIConnect;
 	/* VAR_OUTPUT (analog) */
 	signed long StatusID;
-	struct MpUserXInfoType Info;
+	struct MpUserXLoginUIInfoType Info;
 	/* VAR (analog) */
-	struct MpUserXInternalType Internal;
+	unsigned char InternalState;
+	unsigned long InternalData[24];
 	/* VAR_INPUT (digital) */
 	plcbit Enable;
 	plcbit ErrorReset;
@@ -588,49 +680,6 @@ typedef struct MpUserXLoginUI
 	plcbit Active;
 	plcbit Error;
 } MpUserXLoginUI_typ;
-
-typedef struct MpUserXConfig
-{
-	/* VAR_INPUT (analog) */
-	struct MpUserXConfigType* Configuration;
-	/* VAR_OUTPUT (analog) */
-	signed long StatusID;
-	struct MpUserXInfoType Info;
-	/* VAR (analog) */
-	struct MpComInternalDataType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Enable;
-	plcbit ErrorReset;
-	plcbit Load;
-	plcbit Save;
-	/* VAR_OUTPUT (digital) */
-	plcbit Active;
-	plcbit Error;
-	plcbit CommandBusy;
-	plcbit CommandDone;
-} MpUserXConfig_typ;
-
-typedef struct MpUserXLoginConfig
-{
-	/* VAR_INPUT (analog) */
-	struct MpComIdentType* MpLink;
-	struct MpUserXLoginConfigType* Configuration;
-	/* VAR_OUTPUT (analog) */
-	signed long StatusID;
-	struct MpUserXInfoType Info;
-	/* VAR (analog) */
-	struct MpComInternalDataType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Enable;
-	plcbit ErrorReset;
-	plcbit Load;
-	plcbit Save;
-	/* VAR_OUTPUT (digital) */
-	plcbit Active;
-	plcbit Error;
-	plcbit CommandBusy;
-	plcbit CommandDone;
-} MpUserXLoginConfig_typ;
 
 typedef struct MpUserXSignatureUI
 {
@@ -640,9 +689,10 @@ typedef struct MpUserXSignatureUI
 	struct MpUserXSignatureUIConnectType* UIConnect;
 	/* VAR_OUTPUT (analog) */
 	signed long StatusID;
-	struct MpUserXInfoType Info;
+	struct MpUserXSignatureUIInfoType Info;
 	/* VAR (analog) */
-	struct MpUserXInternalType Internal;
+	unsigned char InternalState;
+	unsigned long InternalData[24];
 	/* VAR_INPUT (digital) */
 	plcbit Enable;
 	plcbit ErrorReset;
@@ -658,9 +708,10 @@ typedef struct MpUserXSignature
 	/* VAR_OUTPUT (analog) */
 	signed long StatusID;
 	signed long ActionID;
-	struct MpUserXInfoType Info;
+	struct MpUserXSignatureInfoType Info;
 	/* VAR (analog) */
-	struct MpUserXInternalType Internal;
+	unsigned char InternalState;
+	unsigned long InternalData[9];
 	/* VAR_INPUT (digital) */
 	plcbit Enable;
 	plcbit ErrorReset;
@@ -671,63 +722,15 @@ typedef struct MpUserXSignature
 	plcbit Rejected;
 } MpUserXSignature_typ;
 
-typedef struct MpUserXServerConfig
-{
-	/* VAR_INPUT (analog) */
-	struct MpUserXServerConfigType* Configuration;
-	/* VAR_OUTPUT (analog) */
-	signed long StatusID;
-	struct MpUserXInfoType Info;
-	/* VAR (analog) */
-	struct MpComInternalDataType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Enable;
-	plcbit ErrorReset;
-	plcbit Load;
-	plcbit Save;
-	/* VAR_OUTPUT (digital) */
-	plcbit Active;
-	plcbit Error;
-	plcbit CommandBusy;
-	plcbit CommandDone;
-} MpUserXServerConfig_typ;
-
-typedef struct MpUserXMappingConfig
-{
-	/* VAR_INPUT (analog) */
-	struct MpComIdentType* MpLink;
-	struct MpUserXMappingConfigType* Configuration;
-	/* VAR_OUTPUT (analog) */
-	signed long StatusID;
-	struct MpUserXInfoType Info;
-	/* VAR (analog) */
-	struct MpComInternalDataType Internal;
-	/* VAR_INPUT (digital) */
-	plcbit Enable;
-	plcbit ErrorReset;
-	plcbit Load;
-	plcbit Save;
-	/* VAR_OUTPUT (digital) */
-	plcbit Active;
-	plcbit Error;
-	plcbit CommandBusy;
-	plcbit CommandDone;
-} MpUserXMappingConfig_typ;
-
 
 
 /* Prototyping of functions and function blocks */
 _BUR_PUBLIC void MpUserXLogin(struct MpUserXLogin* inst);
 _BUR_PUBLIC void MpUserXManagerUI(struct MpUserXManagerUI* inst);
 _BUR_PUBLIC void MpUserXLoginUI(struct MpUserXLoginUI* inst);
-_BUR_PUBLIC void MpUserXConfig(struct MpUserXConfig* inst);
-_BUR_PUBLIC void MpUserXLoginConfig(struct MpUserXLoginConfig* inst);
 _BUR_PUBLIC void MpUserXSignatureUI(struct MpUserXSignatureUI* inst);
 _BUR_PUBLIC void MpUserXSignature(struct MpUserXSignature* inst);
-_BUR_PUBLIC void MpUserXServerConfig(struct MpUserXServerConfig* inst);
-_BUR_PUBLIC void MpUserXMappingConfig(struct MpUserXMappingConfig* inst);
 _BUR_PUBLIC signed long MpUserXLevel(struct MpComIdentType* MpLink);
-_BUR_PUBLIC MpUserXAccessRightEnum MpUserXAccessRight(struct MpComIdentType* MpLink, unsigned short Right);
 _BUR_PUBLIC plcbit MpUserXHasRole(struct MpComIdentType* MpLink, plcwstring* Role);
 _BUR_PUBLIC signed long MpUserXGetData(plcwstring* UserName, plcwstring* Key, plcwstring* Value, unsigned long ValueSize);
 

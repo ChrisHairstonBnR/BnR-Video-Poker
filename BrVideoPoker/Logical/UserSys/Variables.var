@@ -16,4 +16,5 @@ VAR
 	ErrorCode : DINT;
 	ErrorStr : STRING[80];
 	CMD_UserCreationDone : BOOL;
+	ArUserAssignRole_FB : ArUserAssignRole;
 END_VAR

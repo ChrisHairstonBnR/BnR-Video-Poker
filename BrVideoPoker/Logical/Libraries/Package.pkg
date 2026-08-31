@@ -9,10 +9,10 @@
     <Object Type="Library" Language="IEC">Cards</Object>
     <Object Type="Library" Language="IEC" Description="This library generates pseudo random numbers.">PseudoRNG</Object>
     <Object Type="Library" Language="binary" Description="The AsIOTime library is used to generate time stamps based on system time of the I/O system.">AsIoTime</Object>
-    <Object Type="Library" Language="Binary" Description="User management based on user role system">MpUserX</Object>
-    <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
     <Object Type="Library" Language="binary" Description="User Role System">ArUser</Object>
     <Object Type="Library" Language="IEC">PokerHands</Object>
     <Object Type="Library" Language="binary" Description="This library contains standard function blocks and functions for IEC 61131-3.">standard</Object>
+    <Object Type="Library" Language="Binary" Description="User management based on user role system">MpUserX</Object>
+    <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
   </Objects>
 </Package>

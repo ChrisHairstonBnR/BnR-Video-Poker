@@ -1,21 +1,14 @@
 
 TYPE
-	MpUserXAccessRightEnum : 
-		(
-		mpUSERX_ACCESS_UNDEFINED := 0, (*Access right undefined*)
-		mpUSERX_ACCESS_NONE := 1, (*No access rights*)
-		mpUSERX_ACCESS_VIEW := 2, (*Read access*)
-		mpUSERX_ACCESS_ACTUATE := 3, (*Processes can be started/stopped but not edited*)
-		mpUSERX_ACCESS_FULL := 4 (*Full access (read-write access)*)
-		);
 	MpUserXUIMessageEnum : 
 		(
-		mpUSERX_MSG_NONE := 0, (*No dialog box*)
-		mpUSERX_MSG_ERROR := 1, (*Dialog box: Errors*)
-		mpUSERX_MSG_CONFIRM_DELETE := 2, (*Dialog box: Confirmation of user deletion*)
-		mpUSERX_MSG_CONFIRM_LOCK := 3, (*Dialog box: Confirmation of user block*)
-		mpUSERX_MSG_CONFIRM_UNLOCK := 4, (*Dialog box: Confirmation of user unblock*)
-		mpUSERX_MSG_CONFIRM_ROLE_DELETE := 5 (*Dialog box: Confirmation of role deletion*)
+		mpUSERX_UI_MSG_NONE := 0, (*No dialog box*)
+		mpUSERX_UI_MSG_WARNING := 1, (*Dialog box: Warnings*)
+		mpUSERX_UI_MSG_ERROR := 2, (*Dialog box: Errors*)
+		mpUSERX_UI_MSG_CONFIRM_DELETE := 3, (*Dialog box: Confirmation of user deletion*)
+		mpUSERX_UI_MSG_CONFIRM_LOCK := 4, (*Dialog box: Confirmation of user block*)
+		mpUSERX_UI_MSG_CONFIRM_UNLOCK := 5, (*Dialog box: Confirmation of user unblock*)
+		mpUSERX_UI_MSG_CONFIRM_ROLE_DEL := 6 (*Dialog box: Confirmation of role deletion*)
 		);
 	MpUserXMgrUIImportConfirmEnum : 
 		(
@@ -27,44 +20,33 @@ TYPE
 		mpUSERX_UI_STATUS_IDLE := 0, (*Indicates that no process is currently active*)
 		mpUSERX_UI_STATUS_WAIT_DLG := 1, (*Waiting for confirmation or cancelation*)
 		mpUSERX_UI_STATUS_EXECUTE := 2, (*Executing a command*)
+		mpUSERX_UI_STATUS_WARNING := 98, (*The last operation generated a warning*)
 		mpUSERX_UI_STATUS_ERROR := 99 (*The last operation generated an error*)
-		);
-	MpUserXImportModeEnum : 
-		(
-		mpUSERX_IMPORT_SKIP := 0, (*Do not import*)
-		mpUSERX_IMPORT_IGNORE_EXISITNG := 1, (*Ignore existing items*)
-		mpUSERX_IMPORT_OVERWRITE := 2, (*Overwrite existing items*)
-		mpUSERX_IMPORT_OVERWRITE_ONLY := 4, (*Only overwrite items*)
-		mpUSERX_IMPORT_REMOVE_EXISTING := 5 (*Remove existing items before import*)
-		);
-	MpUserXUserMgmtEnum : 
-		(
-		mpUSERX_USERMGMT_LOCAL := 0, (*Use local user management system*)
-		mpUSERX_USERMGMT_CENTRAL := 1, (*Use central user management system*)
-		mpUSERX_USERMGMT_LOCALANDCENTRAL := 2 (*Use both user management systems*)
-		);
-	MpUserXServerEnum : 
-		(
-		mpUSERX_SERVER_ACTIVE_DIRECTORY := 0, (*Use active directory server*)
-		mpUSERX_SERVER_389DS := 1 (*Use 389 directory server*)
 		);
 	MpUserXUserTypeEnum : 
 		(
 		mpUSERX_USER_LOCAL := 0, (*Local user*)
 		mpUSERX_USER_CENTRAL := 1 (*Central user*)
 		);
+	MpUserXMeasurementSystemEnum : 
+		(
+		mpUSERX_ENGINEERING_UNITS := 0, (*Do not convert values (use engineering units)*)
+		mpUSERX_METRIC := 1, (*Convert values to "metric" units*)
+		mpUSERX_IMPERIAL := 2, (*Convert values to "imperial" units*)
+		mpUSERX_IMPERIAL_US := 3 (*Convert values to "imperial-us" units*)
+		);
 	MpUserXUIMessageBoxType : 	STRUCT 
 		LayerStatus : UINT; (*Visibility of the dialog box *)
 		Type : MpUserXUIMessageEnum; (*Type of dialog box*)
 		ErrorNumber : UINT; (*Current error number to be displayed *)
+		StatusID : DINT; (*Current status identifier to be displayed*)
 		Confirm : BOOL; (*Confirms the operation*)
 		Cancel : BOOL; (*Cancels the operation*)
 	END_STRUCT;
 	MpUserXMgrUIUserListType : 	STRUCT 
-		UserNames : ARRAY[0..19]OF WSTRING[50]; (*List of all available users*)
-		UserOptions : ARRAY[0..19]OF USINT; (*Controls the display of elements in the list*)
-		MaxSelection : UINT; (*Index of the entry currently selected in the list*)
-		SelectedIndex : UINT; (*Index of the last entry in the list*)
+		UserNames : ARRAY[0..19]OF WSTRING[100]; (*List of all available users*)
+		MaxSelection : UINT; (*Index of the last entry in the list*)
+		SelectedIndex : UINT; (*Index of the entry currently selected in the list*)
 		PageUp : BOOL; (*Jumps to the start of the current page and then scrolls up one page at a time*)
 		StepUp : BOOL; (* Selects the previous entry in the list*)
 		PageDown : BOOL; (*Jumps to the end of the current page and then scrolls down one page at a time*)
@@ -73,14 +55,14 @@ TYPE
 		RangeEnd : REAL; (*Shows a bar indicating which part of the list is currently being displayed-End[%]*)
 	END_STRUCT;
 	MpUserXMgrUIUserInfoType : 	STRUCT 
-		UserName : WSTRING[50]; (*Display name*)
+		UserName : WSTRING[100]; (*Display name*)
 		FullName : WSTRING[100]; (*Complete username*)
-		Roles : ARRAY[0..9]OF UINT; (*Assigned roles*)
+		Roles : ARRAY[0..29]OF UINT; (*Assigned roles*)
 		Locked : BOOL; (*User is blocked*)
 		Expired : BOOL; (*User password expired*)
 		RemainingAttempts : USINT; (*Number of login attempts left before the user is blocked*)
 		Language : STRING[20]; (*Preferred language*)
-		DisplayUnit : STRING[20]; (*Preferred unit*)
+		MeasurementSystem : MpUserXMeasurementSystemEnum; (*Preferred measurement system*)
 		Creation : DATE_AND_TIME; (*Date and time this user was created*)
 		FirstLogin : DATE_AND_TIME; (*Date and time of the first login*)
 		LastLogin : DATE_AND_TIME; (*Date and time of the last login*)
@@ -89,11 +71,11 @@ TYPE
 		UserType : MpUserXUserTypeEnum; (*User's user type*)
 	END_STRUCT;
 	MpUserXMgrUIAdditionalDataType : 	STRUCT 
-		Key : WSTRING[20]; (*Value identifier*)
+		Key : WSTRING[100]; (*Value identifier*)
 		Value : WSTRING[255]; (*Value*)
 	END_STRUCT;
 	MpUserXMgrUIRoleListType : 	STRUCT 
-		Names : ARRAY[0..9]OF WSTRING[50]; (*List of all available user roles*)
+		Names : ARRAY[0..19]OF WSTRING[100]; (*List of all available user roles*)
 		SelectedIndex : UINT; (*Index of the entry currently selected in the list*)
 		MaxSelection : UINT; (*Index of the last entry in the list*)
 		PageUp : BOOL; (*Jumps to the start of the current page and then scrolls up one page at a time*)
@@ -104,32 +86,27 @@ TYPE
 		RangeEnd : REAL; (*Shows a bar indicating which part of the list is currently being displayed-End[%]*)
 	END_STRUCT;
 	MpUserXMgrUIRoleInfoType : 	STRUCT 
-		Name : WSTRING[50]; (*Name of the user role*)
+		Name : WSTRING[100]; (*Name of the user role*)
 		Index : UINT; (*Index of the user role*)
 		Level : DINT; (*Level of the user role*)
 		Admin : BOOL; (*Indicates whether this role has administrator rights*)
-		AccessRights : ARRAY[0..19]OF MpUserXAccessRightEnum; (*List with the access rights for individual actions*)
 	END_STRUCT;
 	MpUserXMgrUIRoleDlgType : 	STRUCT 
 		LayerStatus : UINT; (*Visibility of the dialog box*)
-		Name : WSTRING[50]; (*Name of the user role*)
+		Name : WSTRING[100]; (*Name of the user role*)
 		Index : UINT; (*Index of the user role in list*)
 		Level : DINT; (*Level of the user role*)
 		LevelLimit : DINT; (*Max. Level allowed to set*)
 		Admin : BOOL; (*Defines whether this role has administrator rights*)
-		AccessRights : ARRAY[0..19]OF MpUserXAccessRightEnum; (*List with the access rights for individual actions*)
-		AccessRightsLimit : ARRAY[0..19]OF MpUserXAccessRightEnum; (*Limit-values for the access-rights*)
 		Confirm : BOOL; (*Confirms the operation*)
 		Cancel : BOOL; (*Cancels the operation*)
 	END_STRUCT;
 	MpUserXMgrUIRoleCreateDlgType : 	STRUCT 
 		LayerStatus : UINT; (*Visibility of the dialog box*)
-		Name : WSTRING[50]; (*Name of the user role*)
+		Name : WSTRING[100]; (*Name of the user role*)
 		Level : DINT; (*Level of the user role*)
 		LevelLimit : DINT; (*Max. Level allowed to set*)
 		Admin : BOOL; (*Defines whether this role has administrator rights*)
-		AccessRights : ARRAY[0..19]OF MpUserXAccessRightEnum; (*List with the access rights for individual actions*)
-		AccessRightsLimit : ARRAY[0..19]OF MpUserXAccessRightEnum; (*Limit-values for the access-rights*)
 		Confirm : BOOL; (*Confirms the operation*)
 		Cancel : BOOL; (*Cancels the operation*)
 	END_STRUCT;
@@ -145,14 +122,14 @@ TYPE
 	END_STRUCT;
 	MpUserXMgrUICreateDlgType : 	STRUCT 
 		LayerStatus : UINT; (*Visibility of the dialog box*)
-		UserName : WSTRING[50]; (*Username*)
+		UserName : WSTRING[100]; (*Username*)
 		FullName : WSTRING[100]; (*Full name of the new user*)
-		Roles : ARRAY[0..9]OF UINT; (*Assigned roles*)
-		RoleOption : ARRAY[0..19]OF USINT; (*Sorts and removes user roles in the drop-down list that cannot be selected*)
-		NewPassword : WSTRING[50]; (*New password*)
-		ConfirmPassword : WSTRING[50]; (*Password confirmation*)
+		Roles : ARRAY[0..29]OF UINT; (*Assigned roles*)
+		RoleOption : ARRAY[0..29]OF USINT; (*Sorts and removes user roles in the drop-down list that cannot be selected*)
+		NewPassword : WSTRING[100]; (*New password*)
+		ConfirmPassword : WSTRING[100]; (*Password confirmation*)
 		Language : STRING[20]; (*Preferred language of the new user*)
-		DisplayUnit : STRING[20]; (*Preferred unit of the new user*)
+		MeasurementSystem : MpUserXMeasurementSystemEnum; (*Preferred measurement system of the new user*)
 		CriteriaNotMet : MpUserXUIPasswordCriteriaEnum; (*Password criterion not met by new password*)
 		NewPasswordOk : UINT; (*New password OK (all criterions met)*)
 		ConfirmPasswordOk : UINT; (*Password-confirmation OK*)
@@ -198,14 +175,14 @@ TYPE
 		List : MpUserXMgrUIImportListType; (*List of all files available for import, as well as the navigation of the list*)
 		FileName : STRING[255]; (*Name of the file to be imported*)
 		Users : BOOL; (*Options that specifies whether user data should be applied*)
-		Roles : BOOL; (*Options that specifies whether user group settings should be applied*)
+		Roles : BOOL; (*Options that specifies whether user role settings should be applied*)
 		Confirm : BOOL; (*Confirms the operation*)
 		Cancel : BOOL; (*Cancels the operation*)
 	END_STRUCT;
 	MpUserXMgrUIImportConfirmType : 	STRUCT 
 		LayerStatus : UINT; (*Visibility of the dialog box*)
-		Type : MpUserXMgrUIImportConfirmEnum; (*Confirmation type (user or group)*)
-		Name : WSTRING[50]; (*Name of user / group*)
+		Type : MpUserXMgrUIImportConfirmEnum; (*Confirmation type (user or role)*)
+		Name : WSTRING[100]; (*Name of user / role*)
 		NumberOfConflicts : UINT; (*Number of remaining conflicts*)
 		ApplyForAll : BOOL; (*Apply selection for all remaining conflicts*)
 		Confirm : BOOL; (*Confirm overwrite of item*)
@@ -225,7 +202,7 @@ TYPE
 		Lock : BOOL; (*Blocks the selected user*)
 	END_STRUCT;
 	MpUserXMgrUIRoleSelectType : 	STRUCT 
-		Names : ARRAY[0..19]OF WSTRING[50]; (*List of all available user groups (not scrollable)*)
+		Names : ARRAY[0..29]OF WSTRING[100]; (*List of all available user roles (not scrollable)*)
 		MaxSelection : UINT; (*Index of the last entry in the list*)
 	END_STRUCT;
 	MpUserXMgrUIRoleType : 	STRUCT 
@@ -242,8 +219,8 @@ TYPE
 		User : MpUserXMgrUIUserType; (*User information*)
 		Role : MpUserXMgrUIRoleType; (*User role information*)
 		MessageBox : MpUserXUIMessageBoxType; (*Controls dialog boxes*)
-		Export : MpUserXMgrUIExportType; (*Exports the user and user group settings*)
-		Import : MpUserXMgrUIImportType; (*Imports the user and user group settings*)
+		Export : MpUserXMgrUIExportType; (*Exports the user and user role settings*)
+		Import : MpUserXMgrUIImportType; (*Imports the user and user role settings*)
 	END_STRUCT;
 	MpUserXUIPasswordCriteriaEnum : 
 		(
@@ -254,9 +231,9 @@ TYPE
 		mpUSERX_PASSWORD_CRIT_SPECIAL := 4 (*Password must contain special characters*)
 		);
 	MpUserXLoginUIPwdDlgType : 	STRUCT 
-		OldPassword : WSTRING[50]; (*Old password*)
-		NewPassword : WSTRING[50]; (*New password*)
-		ConfirmPassword : WSTRING[50]; (*Confirmation of the new password*)
+		OldPassword : WSTRING[100]; (*Old password*)
+		NewPassword : WSTRING[100]; (*New password*)
+		ConfirmPassword : WSTRING[100]; (*Confirmation of the new password*)
 		LayerStatus : UINT; (*Visibility of the dialog box (status data point for the dialog box layer)*)
 		Confirm : BOOL; (*Confirms the operation*)
 		Cancel : BOOL; (*Cancels the operation*)
@@ -271,14 +248,14 @@ TYPE
 	MpUserXLoginUILoginType : 	STRUCT 
 		Login : BOOL; (*Command for logging in*)
 		Logout : BOOL; (*Command for logging out*)
-		UserName : WSTRING[50]; (*Username*)
-		Password : WSTRING[50]; (*Password*)
+		UserName : WSTRING[100]; (*Username*)
+		Password : WSTRING[100]; (*Password*)
 	END_STRUCT;
 	MpUserXLoginUIConnectType : 	STRUCT 
 		Status : MpUserXUIStatusEnum; (*Current operation*)
-		CurrentUser : WSTRING[50]; (*Currently logged in user*)
+		CurrentUser : WSTRING[100]; (*Currently logged in user*)
 		Language : STRING[20]; (*Preferred language of the current (or previous) active user*)
-		DisplayUnit : STRING[20]; (*Preferred unit of the current (or previous) active user*)
+		MeasurementSystem : MpUserXMeasurementSystemEnum; (*Preferred measurement system of the current (or previous) active user*)
 		LoggedIn : BOOL; (*User is logged in*)
 		UserLevel : DINT; (*Current user-level*)
 		Login : MpUserXLoginUILoginType; (*Basic login information*)
@@ -287,71 +264,16 @@ TYPE
 		DefaultLayerStatus : UINT; (*Status data point for the default layer of the visualization page where logging in and out takes place*)
 		UserType : MpUserXUserTypeEnum; (*Current user's user type*)
 	END_STRUCT;
-	MpUserXConfigType : 	STRUCT 
-		NoDelete : BOOL := TRUE; (*Deletion of users not allowed*)
-		PasswordChangeReq : BOOL := FALSE; (*Requires password change on first login*)
-		PasswordCase : BOOL := FALSE; (*Requires password to have both upper- and lowercase letters*)
-		PasswordAlpha : BOOL := TRUE; (*Requires password to have alphanumeric characters*)
-		PasswordLength : UINT := 5; (*Minimum password length*)
-		LoginAttempts : UINT := 3; (*Maximum number of failed login attempts until the user is blocked*)
-		PasswordChangeInterval : DINT := 0; (*Interval in which the password must be changed*)
-		UserExpirationTime : DINT := 0; (*Expiration time for the validity of the user account*)
-		UserNameLength : UINT := 1; (*Minimum user-name length*)
-		SignAttempts : UINT := 3; (*Maximum number of signature attempts before the signature procedure is aborted*)
-		PasswordHistory : UINT := 0; (*Length of password-history to prohibit reuse of passwords*)
-		PasswordSpecial : BOOL := FALSE; (*Requires password to contain special characters*)
-		EditSameLevel : BOOL := FALSE; (*Allow admin-user to edit users (create, change, remove) with same user-level (within same group)*)
-		ImportUser : MpUserXImportModeEnum := mpUSERX_IMPORT_OVERWRITE; (*Import mode for users*)
-		ImportRole : MpUserXImportModeEnum := mpUSERX_IMPORT_OVERWRITE; (*Import mode for roles*)
-		ImportUnchecked : BOOL := FALSE; (*Ignore check-sum in input file*)
-		AdminUnlockTime : DINT := 3600; (*Automatic Unlock Time for Administrators (0=disabled)*)
-		AutoLogoutTime : DINT := 3600; (*Auto Logout Time for all sessions on the system (0=disabled)*)
-		PasswordExpirationNotification : DINT := 0; (*Defines how long before password expiration users should receive a password expiration notification. (0=disabled)*)
-	END_STRUCT;
-	MpUserXHostType : 	STRUCT 
-		Host : STRING[255]; (*DNS name or IPv4 address of the server the client will connect to*)
-		Port : UINT := 636; (*Port*)
-		Certificate : STRING[255]; (*Server certificate*)
-		BaseDN : STRING[255]; (*Base distinguished name (Active Directory Server)*)
-		UserLocationDN : STRING[255]; (*User location distinguished name (389 Directory Server)*)
-	END_STRUCT;
-	MpUserXGroupToRoleMappingType : 	STRUCT 
-		TableName : STRING[50]; (*Name of the group to role mapping table*)
-	END_STRUCT;
-	MpUserXServerType : 	STRUCT 
-		Type : MpUserXServerEnum := mpUSERX_SERVER_ACTIVE_DIRECTORY; (*Determines which server type should be used*)
-		Hosts : ARRAY[0..9]OF MpUserXHostType; (*Host list*)
-		Mapping : MpUserXGroupToRoleMappingType; (*Settings for mapping*)
-		AdditionalUserData : ARRAY[0..9]OF STRING[100]; (*Settings for additional data that should be fetched from server*)
-		DisplayName : STRING[100] := 'Username'; (*Display name attribute that should be fetched from server*)
-		Timeout : UINT := 0; (*Timeout when connection is lost. '0' equals 'Automatic'.*)
-	END_STRUCT;
-	MpUserXServerConfigType : 	STRUCT 
-		UserMgmtSystemType : MpUserXUserMgmtEnum := mpUSERX_USERMGMT_LOCAL; (*Select user management system type*)
-		Server : MpUserXServerType; (*Server settings*)
-		PrioritizeCentralUsers : BOOL := TRUE; (*Prioritize central users*)
-	END_STRUCT;
-	MpUserXMappingConfigType : 	STRUCT 
-		Mapping : ARRAY[0..99]OF MpUserXMappingMappingType; (*Entry of mapping table*)
-	END_STRUCT;
-	MpUserXMappingMappingType : 	STRUCT 
-		LocalRole : WSTRING[50]; (*Local role*)
-		ServerGroup : WSTRING[50]; (*Server group*)
-	END_STRUCT;
-	MpUserXLoginConfigType : 	STRUCT 
-		AutoLogout : DINT := 600; (*Automatic logout time (for inactive users) [s]*)
-	END_STRUCT;
 	MpUserXSignatureUIDlgType : 	STRUCT 
 		LayerStatus : UINT; (*Visibility of the dialog box (status data point for the dialog box layer)*)
-		UserName : WSTRING[50]; (*Username*)
-		Password : WSTRING[50]; (*Password*)
+		UserName : WSTRING[100]; (*Username*)
+		Password : WSTRING[100]; (*Password*)
 		Comment : WSTRING[100]; (*Optional comment added by signing operator*)
 		Confirm : BOOL; (*Confirms the operation*)
 		Cancel : BOOL; (*Cancels the operation*)
 	END_STRUCT;
 	MpUserXSignatureUIConnectType : 	STRUCT 
 		Status : MpUserXUIStatusEnum; (*Current status of the signature-procedure*)
-		SignAction : DINT; (*Start signature procedure by setting this to a value not equal to 0. The value will be available on the CheckAction-FB.*)
 		Dialog : MpUserXSignatureUIDlgType;
 		MessageBox : MpUserXUIMessageBoxType; (*Controls dialog boxes*)
 		DefaultLayerStatus : UINT; (*Status data point for the default layer of the visualization page where logging in and out takes place*)
@@ -367,7 +289,16 @@ TYPE
 		DaysUntilPasswordExpiration : DINT; (*Time remaining before password expires [days]*)
 		UserType : MpUserXUserTypeEnum; (*User's user type*)
 	END_STRUCT;
-	MpUserXInfoType : 	STRUCT 
+	MpUserXManagerUIInfoType : 	STRUCT 
+		Diag : MpUserXDiagType; (*Diagnostic structure for the status ID*)
+	END_STRUCT;
+	MpUserXLoginUIInfoType : 	STRUCT 
+		Diag : MpUserXDiagType; (*Diagnostic structure for the status ID*)
+	END_STRUCT;
+	MpUserXSignatureUIInfoType : 	STRUCT 
+		Diag : MpUserXDiagType; (*Diagnostic structure for the status ID*)
+	END_STRUCT;
+	MpUserXSignatureInfoType : 	STRUCT 
 		Diag : MpUserXDiagType; (*Diagnostic structure for the status ID*)
 	END_STRUCT;
 	MpUserXDiagType : 	STRUCT 
@@ -376,7 +307,6 @@ TYPE
 	MpUserXStatusIDType : 	STRUCT 
 		ID : MpUserXErrorEnum; (*Error code for mapp component*)
 		Severity : MpComSeveritiesEnum; (*Describes the type of information supplied by the status ID (success, information, warning, error)*)
-		Code : UINT; (*Code for the status ID. This error number can be used to search for additional information in the help system*)
 	END_STRUCT;
 END_TYPE
 
