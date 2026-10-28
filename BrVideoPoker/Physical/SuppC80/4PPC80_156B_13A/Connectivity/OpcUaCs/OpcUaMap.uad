@@ -32,6 +32,8 @@
       <Variable Name="gPayTable" RecursiveEnable="1">
         <Variable Name="WinningsScalarArr" RecursiveEnable="1" />
       </Variable>
+      <Variable Name="gPasswordInput" />
+      <Variable Name="gUsernameInput" />
     </GlobalVariables>
     <Task Name="GameCode">
       <Variable Name="GameState" />
@@ -56,6 +58,9 @@
       <Variable Name="PayTableStr" RecursiveEnable="1" />
       <Variable Name="PayTableVisible" RecursiveEnable="1" />
       <Variable Name="PayTableScaledWinnings" RecursiveEnable="1" />
+      <Variable Name="pwReqCheck" RecursiveEnable="2" />
+      <Variable Name="pwInput" />
+      <Variable Name="enableCreateUser" />
     </Task>
   </Module>
 </OpcUaSource>

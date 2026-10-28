@@ -73,7 +73,7 @@ PROGRAM _CYCLIC
 			
 		CREATE_USER_CREATE:
 			ArUserCreate_FB.Execute := TRUE;
-			ArUserCreate_FB.UserName := CreateUserNameStr;
+			ArUserCreate_FB.UserName := gUsernameInput;
 			
 			IF ArUserCreate_FB.Busy THEN
 				//do nothing
@@ -91,8 +91,8 @@ PROGRAM _CYCLIC
 			
 		CREATE_USER_SET_PASSWORD:
 			ArUserSetPassword_FB.Execute := TRUE;
-			ArUserSetPassword_FB.UserName := CreateUserNameStr;
-			ArUserSetPassword_FB.Password := CreateUserPassStr;
+			ArUserSetPassword_FB.UserName := gUsernameInput;
+			ArUserSetPassword_FB.Password := gPasswordInput;
 			
 			IF ArUserSetPassword_FB.Busy THEN
 				//do nothing
@@ -112,7 +112,7 @@ PROGRAM _CYCLIC
 			
 		CREATE_USER_ASSIGN_ROLE:
 			ArUserAssignRole_FB.Execute := TRUE;
-			ArUserAssignRole_FB.UserName := CreateUserNameStr;
+			ArUserAssignRole_FB.UserName := gUsernameInput;
 			ArUserAssignRole_FB.RoleName := 'Player';
 			IF ArUserAssignRole_FB.Busy THEN
 				//do nothing

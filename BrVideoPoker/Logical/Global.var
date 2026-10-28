@@ -9,4 +9,6 @@ VAR
 	gCommand : Command_typ;
 	gPayTable : PayTable_typ;
 	gDeck : DeckFB;
+	gPasswordInput : STRING[24];
+	gUsernameInput : STRING[80];
 END_VAR

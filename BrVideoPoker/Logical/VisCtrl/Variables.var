@@ -1,4 +1,12 @@
 VAR
+	enableCreateUser : BOOL;
+END_VAR
+VAR CONSTANT
+	pwReqCheck_NULL : pwReqCheck_typ := (0);
+END_VAR
+VAR
+	pwReqCheck : pwReqCheck_typ;
+	pwInput : STRING[80];
 	CardStr : ARRAY[0..4] OF STRING[80];
 	BetIndex : USINT;
 	i : USINT;
@@ -9,4 +17,6 @@ VAR
 	PayTableStr : ARRAY[0..13] OF STRING[80];
 	PayTableScaledWinnings : ARRAY[0..13] OF REAL;
 	PayTableVisible : ARRAY[0..13] OF BOOL;
+	pwReqCheckIndex : UDINT;
+	pwAsciiArray : ARRAY[0..23] OF USINT;
 END_VAR

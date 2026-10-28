@@ -1,17 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="ContentCreateUser_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::UserSys:CreateUserNameStr" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="TextInput_Username" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::UserSys:CreateUserPassStr" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="Password1" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::UserSys:ErrorStr" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="TextOutput_Error" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gPasswordInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="Password1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gUsernameInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="TextInput_Username" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:enableCreateUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="Button_Confirm" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:pwReqCheck.hasAlphaNumericChars" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="CheckBox_AlphaNumericChars" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:pwReqCheck.hasSpecialChars" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="CheckBox_SpecialChars" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:pwReqCheck.isMixedCase" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="CheckBox_MixedCase" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::VisCtrl:pwReqCheck.isMinLength" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentCreateUser" widgetRefId="CheckBox_MinLength" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>
