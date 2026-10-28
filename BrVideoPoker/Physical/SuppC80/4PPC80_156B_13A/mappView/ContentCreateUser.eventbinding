@@ -13,29 +13,43 @@
     </EventBinding>
     <EventBinding id="EventBinding_5">
       <Source xsi:type="opcUa.Event" refId="::UserSys:CMD_UserCreationDone" event="ValueChanged" />
-      <Operand datatype="ANY_STRING" name="Username">
+      <Operand datatype="ANY_STRING" name="user">
         <ReadTarget xsi:type="widgets.brease.TextInput.ReadAction" contentRefId="ContentCreateUser" widgetRefId="TextInput_Username">
           <Method xsi:type="widgets.brease.TextInput.Action.GetValue" />
         </ReadTarget>
       </Operand>
-      <Operand datatype="ANY_STRING" name="Password">
+      <Operand datatype="ANY_STRING" name="pass">
         <ReadTarget xsi:type="widgets.brease.Password.ReadAction" contentRefId="ContentCreateUser" widgetRefId="Password1">
           <Method xsi:type="widgets.brease.Password.Action.GetValue" />
         </ReadTarget>
       </Operand>
       <EventHandler condition="newValue = TRUE">
         <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.TextInput.Action" contentRefId="ContentCreateUser" widgetRefId="TextInput_Username">
+                <Method xsi:type="widgets.brease.TextInput.Action.SetValue" value="" />
+              </Target>
+            </Action>
+          </Step>
           <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Password.Action" contentRefId="ContentCreateUser" widgetRefId="Password1">
+                <Method xsi:type="widgets.brease.Password.Action.SetValue" value="" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="4">
             <Action>
               <Target xsi:type="clientSystem.Action">
                 <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="DialogCreateUser" />
               </Target>
             </Action>
           </Step>
-          <Step order="2">
+          <Step order="5">
             <Action>
-              <Target xsi:type="clientSystem.Action">
-                <Method xsi:type="clientSystem.Action.Login" userName="=Username" password="=Password" />
+              <Target xsi:type="opcUa.NodeAction" refId="::UserSys:CMD_UserCreationDone">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
               </Target>
             </Action>
           </Step>

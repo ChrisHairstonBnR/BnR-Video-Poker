@@ -53,12 +53,6 @@
         <Property ID="lang" />
         <Property ID="measSystem" Value="0" />
       </Group>
-      <Group ID="DefUser#2">
-        <Property ID="id" Value="Anonymous" />
-        <Property ID="name" />
-        <Property ID="lang" />
-        <Property ID="measSystem" Value="0" />
-      </Group>
     </Group>
     <Group ID="Roles">
       <Group ID="DefRole#1">

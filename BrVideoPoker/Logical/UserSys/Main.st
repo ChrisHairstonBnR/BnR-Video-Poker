@@ -66,7 +66,6 @@ PROGRAM _CYCLIC
 	
 	CASE CreateUserState OF
 		CREATE_USER_WAIT:
-			CMD_UserCreationDone := FALSE;
 			IF CMD_CreateUser THEN
 				CreateUserState := CREATE_USER_CREATE;
 				//CMD_UserCreationDone := FALSE;
@@ -78,16 +77,16 @@ PROGRAM _CYCLIC
 			
 			IF ArUserCreate_FB.Busy THEN
 				//do nothing
-			ELSIF ArUserCreate_FB.Done THEN
-				//CMD_CreateUser := FALSE;
-				ArUserCreate_FB.Execute := FALSE;
-				ArUserCreate_FB.UserName := '';
-				CreateUserState := CREATE_USER_SET_PASSWORD;
 			ELSIF ArUserCreate_FB.Error THEN
 				ArUserCreate_FB.Execute := FALSE;
 				ArUserCreate_FB.UserName := '';
 				ErrorCode := ArUserCreate_FB.ErrorID;
 				CreateUserState := CREATE_USER_ERROR;
+			ELSIF ArUserCreate_FB.Done THEN
+				//CMD_CreateUser := FALSE;
+				ArUserCreate_FB.Execute := FALSE;
+				ArUserCreate_FB.UserName := '';
+				CreateUserState := CREATE_USER_SET_PASSWORD;
 			END_IF
 			
 		CREATE_USER_SET_PASSWORD:
@@ -97,19 +96,18 @@ PROGRAM _CYCLIC
 			
 			IF ArUserSetPassword_FB.Busy THEN
 				//do nothing
+			ELSIF ArUserSetPassword_FB.Error THEN
+				ArUserSetPassword_FB.Execute := FALSE;
+				ArUserSetPassword_FB.UserName := '';
+				ArUserSetPassword_FB.Password := '';
+				ErrorCode := ArUserSetPassword_FB.ErrorID;
+				CreateUserState := CREATE_USER_ERROR;
 			ELSIF ArUserSetPassword_FB.Done THEN
 				//CMD_CreateUser := FALSE;
 				ArUserSetPassword_FB.Execute := FALSE;
 				ArUserSetPassword_FB.UserName := '';
 				ArUserSetPassword_FB.Password := '';
 				CreateUserState := CREATE_USER_ASSIGN_ROLE;
-			ELSIF ArUserSetPassword_FB.Error THEN
-				ArUserSetPassword_FB.Execute := FALSE;
-				ArUserSetPassword_FB.UserName := '';
-				ArUserSetPassword_FB.Password := '';
-				ErrorCode := ArUserSetPassword_FB.ErrorID;
-				CMD_CreateUser := FALSE;
-				CreateUserState := CREATE_USER_ERROR;
 			END_IF
 			
 		CREATE_USER_ASSIGN_ROLE:
@@ -118,17 +116,27 @@ PROGRAM _CYCLIC
 			ArUserAssignRole_FB.RoleName := 'Player';
 			IF ArUserAssignRole_FB.Busy THEN
 				//do nothing
+			ELSIF ArUserAssignRole_FB.Error THEN
+				ArUserAssignRole_FB.Execute := FALSE;
+				ArUserAssignRole_FB.UserName := '';
+				ArUserAssignRole_FB.RoleName := '';
+				ErrorCode := ArUserAssignRole_FB.ErrorID;
+				CreateUserState := CREATE_USER_ERROR;
 			ELSIF ArUserAssignRole_FB.Done THEN
 				ArUserAssignRole_FB.Execute := FALSE;
 				ArUserAssignRole_FB.UserName := '';
 				ArUserAssignRole_FB.RoleName := '';
-				CreateUserState := CREATE_USER_ERROR; //go to user state, if no error it will progress to wait
+				ErrorCode := 0;
+				ErrorStr := '';
+				CMD_UserCreationDone := TRUE;
+				CMD_CreateUser := FALSE;
+				CreateUserState := CREATE_USER_WAIT; //go to user state, if no error it will progress to wait
 			END_IF
+			
 			
 			
 		CREATE_USER_ERROR:
 			CMD_CreateUser := FALSE;
-			CMD_UserCreationDone := TRUE;
 			CreateUserState := CREATE_USER_WAIT;
 			CASE ErrorCode OF
 				arUSER_ERR_PARAMETER:
@@ -140,7 +148,7 @@ PROGRAM _CYCLIC
 				arUSER_ERR_INTERNAL:
 					ErrorStr :='An unexpected internal error has occurred.';
 				ELSE
-					ErrorStr := '';
+					ErrorStr := 'An unspecified error has occured. Check the logger.';
 			END_CASE
 		
 	END_CASE

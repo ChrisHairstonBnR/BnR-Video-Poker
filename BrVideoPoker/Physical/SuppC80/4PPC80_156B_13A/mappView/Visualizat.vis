@@ -20,7 +20,7 @@
     <EventBindingsSet refId="ContentUser_eventbinding" />
     <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentResult_eventbinding" />
-    <EventBindingsSet refId="ContentCreateUser_eventbinding" />
+		<EventBindingsSet refId="ContentCreateUser_eventbinding" />
     <EventBindingsSet refId="ContentHome_eventbinding" />
     <EventBindingsSet refId="ContentTop169_eventbinding" />
   </EventBindingsSets>

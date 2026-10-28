@@ -1,4 +1,5 @@
 VAR
+	CMD_UserCreationAcknowledged : USINT;
 	CMD_CreateUser : BOOL;
 	CurrentUser : STRING[80];
 	ArUserSetProperty_FB : ArUserSetProperty;

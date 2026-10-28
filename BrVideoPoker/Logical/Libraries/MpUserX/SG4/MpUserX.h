@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* MpUserX 6.7.1 */
+/* MpUserX 6.8.0 */
 
 #ifndef _MPUSERX_
 #define _MPUSERX_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _MpUserX_VERSION
-#define _MpUserX_VERSION 6.7.1
+#define _MpUserX_VERSION 6.8.0
 #endif
 
 #include <bur/plctypes.h>
